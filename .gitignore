@@ -1,0 +1,15 @@
+#Ignore LaTeX generated files
+*/*.aux
+*/*.log
+*/*.out
+*/*.blg
+
+tex/ClementiBarba2020.pdf
+tex/*.pdf                 #to ignore the logos. 
+tex/ClementiBarba2020.spl
+tex/ClementiBarba2020.bbl
+tex/ClementiBarba2020.synctex.gz
+tex/ClementiBarba2020.fdb_latexmk
+tex/ClementiBarba2020.fls
+
+.DS_Store
