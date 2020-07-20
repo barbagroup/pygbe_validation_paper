@@ -5,7 +5,7 @@
 */*.blg
 
 tex/ClementiBarba2020.pdf
-tex/*.pdf                 #to ignore the logos. 
+tex/*.pdf
 tex/ClementiBarba2020.spl
 tex/ClementiBarba2020.bbl
 tex/ClementiBarba2020.synctex.gz
