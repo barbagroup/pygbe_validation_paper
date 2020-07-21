@@ -50,15 +50,21 @@ $^{3}$Third author address}
     
 %%%%%%%%%% Insert the texts which can accommodate on firstpage in the tag "fmtext" %%%%%
     
-\begin{fmtext}   %I DON'T GET WHAT WE ARE SUPPOSE TO PUT HERE, BUT THE GUIDELINES HAVE THIS
-\section{Intro}
+\begin{fmtext}  
+\section{fist page thing}
 
-PUT SOMETHING HERE
+PUT SOMETHING HERE. I DON'T GET WHAT WE ARE SUPPOSE TO PUT HERE, BUT THE GUIDELINES HAVE THIS
 
 \end{fmtext}
 
 \maketitle
-I dont know why all the text goes in warning
+% Body of paper.
+
+\section{Results} \label{sec:results}
+\input{results}
+
+\bibliographystyle{vancouver}
+\bibliography{pygbe_rep_val} %don't leave spaces between elements, it throws error
 
 
 \end{document}
