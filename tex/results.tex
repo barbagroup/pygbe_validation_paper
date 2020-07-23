@@ -2,6 +2,40 @@
 
 \subsection{Replication of results from Rockstuhl, et al., 2005}
 
+%%% Rockstuhl work summary%%%%
+The work of Rockstuhl et al. study the phonon-polariton response of silicon carbide (SiC)
+nanoparticles using the boundary element method. They analyze different "cylindrical particles"
+made of 6H-SiC as a function of geometrical cross section. These "cylinders" have an infinite
+extension in the third dimension, and they solve these geometries numerically with a 2D 
+boundary element method from their previous work \cite{rockstuhl2003}. 
+%%% Rockstuhl work summary%%%%
+
+
+We decided to replicate one of the results that they present on Fig.14 of their paper, which 
+presents the scattering cross section of a SiC rectangular cylinder for three different object 
+sizes. To complain with our quasistatic approach we chose the particular case where a=672 nm and 
+b=328 nm.
+
+\textbf{difference between methods, mesh and dielectric data}
+
+\textit{method}: The main difference between Rockstuhl simulations and ours is that they solve a 2D problem, 
+while we solve a 3D model. In our case the geometry has a finite third dimension. To cope with this
+we will extend the third direction considerably, and study this effect. 
+
+\textit{mesh}: Their work does not provide any details regarding the discretization of their geometries or 
+parameters involved in the simulations. We performed a grid independence study to make sure that we are
+solving properly the physics and minimizing errors due to discretization. 
+
+\textit{dielectric data}: The use 6H-SiC as material, and they obtained their data from a a source that we
+were not able to replicate. Instead we are using experimental data for 4h-SiC that was provided to us 
+via private communications.  
+
+
+
+
+
+
+
 These first set of results correspond to the replication study of some results 
 of Rockstuhl et al, 2005 \cite{rockstuhl2005}. Rockstuhl and coworkers did a two dimension 
 study of the phonon-polariton response of different nanoparticles of silicon carbide (SiC)
