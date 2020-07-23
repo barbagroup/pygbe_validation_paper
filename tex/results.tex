@@ -13,7 +13,7 @@ boundary element method from their previous work \cite{rockstuhl2003}.
 
 We decided to replicate one of the results that they present on Fig.14 of their paper, which 
 presents the scattering cross section of a SiC rectangular cylinder for three different object 
-sizes. To complain with our quasistatic approach ($\lambda > d$ where $d$) we chose the particular 
+sizes. To comply with our quasistatic approach ($\lambda > d$ where $d$) we chose the particular 
 case where a=672 nm and b=328 nm.
 
 \textbf{Difference between methods, mesh and dielectric data}
@@ -60,12 +60,24 @@ of Figure 14 of Rockstuhl work.
 
 \subsubsection{Replication of Figure 14 (case a1) of Rockstuhl 2005}
 
-Based on the reuslts of the grid independence stud we decided to we used the density of the cube as a reference to produce the meshes for the replication 
-of figures 14a and 14b on Rockstuhl's work (case a1=672, b=328). This simulation is a "rectangular cylinder" of 
-dimensions (we chose a case that will go well with our quasistatic model) are $a=672$ nm and $b=328$ nm. 
+We chose to replicate the result of Rocksuthl et al. presented in Figure 14. In particular the case where $a=672$ nm 
+and $b=328$ nmn, since these dimension comply with the requirements of the quasistatic approximation.
+They present the normalized scattering cross section of a SiC rectangular cylinder, and they perform simulation 
+for two different setups. In Rockstuhl Figure 14 (left) they have the wave vector (illumination) along the long 
+side of the geometry, which means that the electric field is parallel to the short side of the rectangle. Following, 
+a similar analysis Rockstuhl Figure 14 (right) they have the wave vector (illumination) along the short
+side of the geometry, which means that the electric field is parallel to the long side of the rectangle. These orientations,
+correspond to the images (A) and (B) in the sketch presented in Figure \ref{fig:rectangle_sketch}.
 
-Effect of extended third dimension (in our case this is the y axis) are in Figures \ref{fig:ext_y_14} and
-
+Based on the results of the grid independence stud we decided to we used the density of the cube as a reference to 
+produce the meshes for the replication of figures 14a and 14b on Rockstuhl's work (case a1=672, b=328). For the third 
+dimension we needed to chose a value that represents "infinity". To achieve this, we perform a study on the effects of 
+elongate the third dimension. In Figure \ref{fig:ext_y_14} we present the results for two different values of the 
+third dimension, $y=1344$ nm (2xa) and $y=2688$ nm (4xa). 
+We see that as we extend the third dimension the intensity of some peaks decreases, this is because some
+of the peaks are related to the third dimension. Therefore, from now on we use $y=y=2688$ nm. It is worth 
+noting that we could have increased this value more, however, the simulations will become computational
+more expensive and we will still have the effects of having a 3D model.
 
 \begin{figure}
     \centering
@@ -78,48 +90,59 @@ Effect of extended third dimension (in our case this is the y axis) are in Figur
     \centering
     \subfloat{\includegraphics[width=0.45\textwidth]{ext_y_14a.pdf}}
     \subfloat{\includegraphics[width=0.45\textwidth]{ext_y_14b.pdf}} 
-    %\caption{Extension of third dimension (y-axis) study for the case of rectangle prism of dimensions a=672 nm and b= 328 nm.
-    %        Attempt of replication of Figure 14 a on Rockstuhl paper (case a1). In this case we have the constant 
-    %        electric field parallel to the short dimension (b), and the geometry is in air. 
-    %        Normalized (by max) Extinction cross section of a rectangle for two different y-values in the 
-    %        short edge configuration (electric field parallel to the shorter dimension)}
-    %\label{fig:ext_y_14a}
-    %\label{fig:ext_y_14b}
-    \caption{THIS IS A BIG CAPTION}
+    \caption{Effect of the elongation of the third direction ($y$) on the 
+        extinction cross section of a rectangular prism of SiC of dimensions $a=672$ nm 
+        and $b=328$ nm, submerged in air and under a constant electric field 
+        parallel to the z-axis. The left plot corresponds to a configuration such that the electric 
+        field is parallel to $b$ (configuration (A) on Figure \ref{fig:rectangle_sketch}), while the 
+        right plot corresponds to a configuration such that the electric field is 
+        parallel to $a$ (configuration (B) on Figure \ref{fig:rectangle_sketch}}
     \label{fig:ext_y_14}   
  \end{figure}
 
 
-We see that as we elongate the third dimension the extra peaks start fading. 
-
-At this point we noticed that the mesher (trimesh) was not generating a uniform mesh. We created our 
-own mesher, and tested the difference. Moreover, the paper mentioned that they rounded the corners of their
-"rectangular cylinder". We were able to give our mesh as input to trimesh and round the edges but we were not able 
-to know how the roundness was related to the arc of the curvature. This were parameters with no physical meaning, 
-therefore we decided to go with the default setting. 
-
+To generate the meshes for these simulations, we used the open source software Trimesh 
+(\url{https://github.com/mikedh/trimesh}), but we realized that it was not producing a 
+uniform mesh and that it was not possible to produce regular triangles with the functions 
+available. To overcome this, we created our own mesh using python scripts, and therefore 
+obtain uniform meshes. We wanted to study the effect of a uniform mesh as well as the effect
+on rounding the edges. We wanted to round the edges since in Rockstuhl work this was mentioned 
+as a factor that will introduce extra peaks on the response. We were not able to control the 
+roundness as a function of arc of curvature or the dimensions of the rectangular prism, so we 
+decided to use the default settings on Trimesh. Figure \ref{fig:tri_reg_round_14} shows the 
+results on the effect of uniformity and roundness. You can see that the second peak is not
+present in the green curve, which can be attributed to the effect of the roundness. This is 
+consistent with the results on Rockstuhl's work. 
 
 \begin{figure}
     \centering
     \subfloat{\includegraphics[width=0.45\textwidth]{tri_reg_round_14a.pdf}}
     \subfloat{\includegraphics[width=0.45\textwidth]{tri_reg_round_14b.pdf}}
-    \caption{Normalized (by max) Extinction cross section of a rectangle. Original trimesh, regular, and regular with 
-    roundness. Short edge configuration (electric field parallel to the shorter (left) dimension)}
+    \caption{ Effect of uniformity and roundness on the mesh on the 
+    extinction cross section of a rectangular prism of SiC of dimensions $a=672$ nm, 
+    $b=328$ nm and $y=2688$ nm, submerged in air and under a constant electric field 
+    parallel to the z-axis}
     \label{fig:tri_reg_round_14}
  \end{figure}
 
-
- Finally with all this info, here is the replication of Figures 14a and 14b. 
+Once we have found the "best" possible geometry approximation, we show how our results 
+(green curve in Figure \ref{fig:tri_reg_round_14}) compare 
+with the original results from Rockstuhl's Figure 14. We have obtained Rockstuhl's curves by using 
+the WebPlotDigitizer (\url{https://apps.automeris.io/wpd/}). The replication results are 
+presented in Figure \ref{fig:rep_14}. We can say that the main peaks presented in Rockstuhl et al. are 
+successfully replicated. While we still have the presence of a third peak in our results, we believe 
+this is a consequence of the 3D nature of our geometry.
 
  \begin{figure}
     \centering
     \subfloat{\includegraphics[width=0.45\textwidth]{replication_14a.pdf}}
     \subfloat{\includegraphics[width=0.45\textwidth]{replication_14b.pdf}} 
-
-    \caption{Normalized (by max) Extinction cross section of a rectangle. Replication of 
-    the short (long) edge configuration (electric field parallel to the shorter (longer) dimension)}
+    \caption{Replication of Figure 14 from Rockstuhl 2005. Extinction cross section of a
+    rectangular prism of SiC of dimensions $a=672$ nm, $b=328$ nm and $y=2688$ nm, submerged
+    in air and under a constant electric field parallel to the z-axis.}
     \label{fig:rep_14}
  \end{figure}
+
 
 
  \subsection{Replication of results from Ellis et al., 2016, and validation}
