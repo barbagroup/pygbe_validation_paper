@@ -1,0 +1,38 @@
+%!TEX root = ClementiBarba2020.tex
+
+\subsection{Verification, validation, reproducibility and replication}
+
+Verification and validation of computational models---often abbreviated V\&V and viewed in concert---has developed into a mature subject with more than two decades of organized efforts to standardize it, dedicated conferences, and a  journal. 
+The American Society of Mechanical Engineers (ASME), a standards-developing organization, formed its first Verification and Validation committee (known as V\&V 10) in 2001, with the charter: 
+``to develop standards for assessing the correctness and credibility of modeling and simulation in computational solid mechanics.''
+It approved its first document in 2006: The Guide for Verification and Validation in Computational Solid Mechanics (known as V\&V 10-2006). 
+The fact that this guide was five years in the making illustrates just how complex the subject matter, and building consensus about it, can be. 
+Since that first effort, six additional standards sub-committees have tackled V\&V in a variety of contexts. 
+V\&V 70 is the latest, focused on machine-learning models.
+The key principles laid out in the first V\&V standard persevere through the many subsequent efforts that have operated to this day. 
+They are:
+
+\begin{enumerate}
+
+\item[$\triangleright$] Verification must precede validation.
+\item[$\triangleright$] The need for validation experiments and the associated accuracy requirements for computational model predictions are based on the intended use of the model.
+\item[$\triangleright$] Validation of a complex system should be pursued in a hierarchical fashion from the component level to the system level.
+\item[$\triangleright$] Validation is specific to a particular computational model for a particular intended use.
+\item[$\triangleright$] Validation must assess the predictive capability of the model in the physical realm of interest, and it
+must address uncertainties that arise from both simulation results and experimental data.
+
+\end{enumerate}
+
+The process of \emph{verification} establishes that a computational model correctly describes the intended mathematical equations and their solutions.
+It encompasses both code correctness, and solution accuracy.
+\emph{Validation}, on the other hand, seeks to determine to which measure a computational model represents the physical world. 
+We like to say that ``verification is solving the equations right, and validation is solving the right equations'' (source unknown). 
+But in reality the exercise can be much more complicated than this sounds. 
+Computational models in most cases are built in a hierarchy of simplifications and approximations, and comparing with the physical world means conducting experiments, which themselves carry uncertainties. 
+As we will discuss in this paper, verification and validation in contexts that involve complex physics at less tractable scales (either very small, or very large), or where experimental methods are nascent, proceeds in a tangle of researcher judgements and path finding. 
+
+
+
+\subsection{Description of the PyGBe software}
+
+\subsection{Physics context for this work}
