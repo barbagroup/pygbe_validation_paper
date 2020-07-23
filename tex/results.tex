@@ -130,36 +130,41 @@ of the pillar that is not the height.
     \label{fig:AR_22_vs_norm}
  \end{figure}
 
-THIS ARE THE PEAKS OF FIGURE \ref{fig:AR_22_vs_norm} need to find a better way of 
-present these numbers. 
 
-AR 1 peaks at frequency\\
-normal: [ {\color{green}917.73} 934.092 949.604 957.325]\\
-22 deg: [ {\color{red}883.926} {\color{green}917.73} 935.052 949.604 957.325]\\
+\begin{table}
+    \begin{center}
+      \caption{Wavelength at which peaks happen for different aspect ratios, for runs where the electric
+      field is parallel to the length (L) of the pillar. We have normal incidence and 22 degrees.}
+      \label{tab:table1}
+      \begin{tabular}{c c c c c c c c}
+        \textbf{AR} \\
+        \hline
+        \multirow{2}{*}{1} & $\perp$ & \textbf{917.73} & 934.092 & 949.604 & 957.325 \\ % <-- Combining 2 rows with arbitrary with (*) and content 12
+        & 22$^{\circ}$ & 883.926 & \textbf{917.73} & 935.052 & 949.604 & 957.325 \\ % <-- Content of first column omitted.
+        \hline
+        \multirow{2}{*}{2} & $\perp$ & \textbf{903.233} & 926.395 & 944.762 & 958.242 \\ % <-- Combining 2 rows with arbitrary with (*) and content 12
+        & 22$^{\circ}$ & 896.517 & \textbf{903.233} & 926.395 & 944.762 & 958.242 \\ % <-- Content of first column omitted.
+        \hline
+        \multirow{2}{*}{3} & $\perp$ & \textbf{888.793} & 922.552 & 931.223 & 948.613 & 958.242 \\ % <-- Combining 2 rows with arbitrary with (*) and content 12
+        & 22$^{\circ}$ & \textbf{888.793} & 899.418 & 922.552 & 931.223 & 958.242 \\ % <-- Content of first column omitted.
+        \hline
+        \multirow{2}{*}{4} & $\perp$ & \textbf{876.186} & 929.32 & 946.639 & 958.242 \\ % <-- Combining 2 rows with arbitrary with (*) and content 12
+        & 22$^{\circ}$ & \textbf{876.186} & 901.281 & 921.618 & 929.32 & 945.745 & 958.242 \\ % <-- Content of first column omitted.
+        \hline
+        \multirow{2}{*}{5} & $\perp$ & \textbf{865.576} & 926.395 & 945.745 & 958.242 \\ % <-- Combining 2 rows with arbitrary with (*) and content 12
+        & 22$^{\circ}$ & \textbf{865.576} & 901.281 & 921.618 & 958.242 \\ % <-- Content of first column omitted.
+        \hline
+        \multirow{2}{*}{6} & $\perp$ &  \textbf{856.904} & 914.793 & 923.489 & 929.32 & 946.639 & 958.242\\ % <-- Combining 2 rows with arbitrary with (*) and content 12
+        & 22$^{\circ}$ & \textbf{856.904} & 901.281 & 920.6 & 958.242\\ % <-- Content of first column omitted.
+        \hline
+        \multirow{2}{*}{7} & $\perp$ &  \textbf{850.134} & 910.963 & 921.618 & 928.372 & 946.639 & 958.242 \\ % <-- Combining 2 rows with arbitrary with (*) and content 12
+        & 22$^{\circ}$ & \textbf{850.134} & 901.281 & 910.963 & 920.6 & 958.242\\ % <-- Content of first column omitted.
+        \hline
 
-AR 2 peaks at frequency\\
-normal: [ {\color{green}903.233} 926.395 944.762 958.242]\\
-22 deg: [ {\color{red}896.517} {\color{green}903.233} 926.395 944.762 958.242]\\
+      \end{tabular}
+    \end{center}
+  \end{table}
 
-AR 3 peaks at frequency\\
-normal: [ {\color{green}888.793} 922.552 931.223 948.613 958.242]\\
-22 deg: [ {\color{green}888.793} 899.418 922.552 931.223 958.242]\\
-
-AR 4 peaks at frequency\\
-normal: [ {\color{green}876.186} 929.32 946.639 958.242]\\
-22 deg: [ {\color{green}876.186} 901.281 921.618 929.32 945.745 958.242]\\
-
-AR 5 peaks at frequency\\
-normal: [ {\color{green}865.576} 926.395 945.745 958.242]\\
-22 deg: [ {\color{green}865.576} 901.281 921.618 958.242]\\
-
-AR 6 peaks at frequency\\
-normal: [ {\color{green}856.904} 914.793 923.489 929.32 946.639 958.242]\\
-22 deg: [ {\color{green}856.904} 901.281 920.6 958.242]\\
-
-AR 7 peaks at frequency
-normal: [ {\color{green}850.134} 910.963 921.618 928.372 946.639 958.242]
-22 deg: [ {\color{green}850.134} 901.281 910.963 920.6 958.242]
 
 In other words, we choose the lower mode (lower wavenumber) from the normal 
 incidence cases.
