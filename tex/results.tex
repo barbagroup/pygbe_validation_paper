@@ -42,30 +42,31 @@ Based on these results we used the density of the cube as a reference to produce
 of figures 14a and 14b on Rockstuhl's work (case a1=672, b=328). This simulation is a "rectangular cylinder" of 
 dimensions (we chose a case that will go well with our quasistatic model) are $a=672$ nm and $b=328$ nm. 
 
-Effect of extended third dimension (in our case this is the y axis) are in Figures \ref{fig:ext_y_14a} and
-\ref{fig:ext_y_14b}
+Effect of extended third dimension (in our case this is the y axis) are in Figures \ref{fig:ext_y_14} and
+
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.85\textwidth]{ext_y_14a.pdf} 
-    \caption{Extension of third dimension (y-axis) study for the case of rectangle prism of dimensions a=672 nm and b= 328 nm.
-            Attempt of replication of Figure 14 a on Rockstuhl paper (case a1). In this case we have the constant 
-            electric field parallel to the short dimension (b), and the geometry is in air. 
-            Normalized (by max) Extinction cross section of a rectangle for two different y-values in the 
-            short edge configuration (electric field parallel to the shorter dimension)}
-    \label{fig:ext_y_14a}
+    \includegraphics[width=0.45\textwidth]{rockstuhl_rectangles.pdf} 
+    \caption{Rockstuhl runs configurations}
+    \label{fig:rectangle_sketch}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \subfloat{\includegraphics[width=0.45\textwidth]{ext_y_14a.pdf}}
+    \subfloat{\includegraphics[width=0.45\textwidth]{ext_y_14b.pdf}} 
+    %\caption{Extension of third dimension (y-axis) study for the case of rectangle prism of dimensions a=672 nm and b= 328 nm.
+    %        Attempt of replication of Figure 14 a on Rockstuhl paper (case a1). In this case we have the constant 
+    %        electric field parallel to the short dimension (b), and the geometry is in air. 
+    %        Normalized (by max) Extinction cross section of a rectangle for two different y-values in the 
+    %        short edge configuration (electric field parallel to the shorter dimension)}
+    %\label{fig:ext_y_14a}
+    %\label{fig:ext_y_14b}
+    \caption{THIS IS A BIG CAPTION}
+    \label{fig:ext_y_14}   
  \end{figure}
 
- \begin{figure}
-    \centering
-    \includegraphics[width=0.85\textwidth]{ext_y_14b.pdf} 
-    \caption{Extension of third dimension (y-axis) study for the case of rectangle prism of dimensions a=672 nm and b= 328 nm.
-    Attempt of replication of Figure 14b on Rockstuhl paper (case a1). In this case we have the constant 
-    electric field parallel to the long dimension (a), and the geometry is in air.
-        Normalized (by max) Extinction cross section of a rectangle for two different y-values in the 
-    long edge configuration (electric field parallel to the longer dimension)}
-    \label{fig:ext_y_14b}
- \end{figure}
 
 We see that as we elongate the third dimension the extra peaks start fading. 
 
@@ -78,18 +79,11 @@ therefore we decided to go with the default setting.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.85\textwidth]{tri_reg_round_14a.pdf} 
+    \subfloat{\includegraphics[width=0.45\textwidth]{tri_reg_round_14a.pdf}}
+    \subfloat{\includegraphics[width=0.45\textwidth]{tri_reg_round_14b.pdf}}
     \caption{Normalized (by max) Extinction cross section of a rectangle. Original trimesh, regular, and regular with 
-    roundness. Short edge configuration (electric field parallel to the shorter dimension)}
-    \label{fig:tri_reg_round_14a}
- \end{figure}
-
- \begin{figure}
-    \centering
-    \includegraphics[width=0.85\textwidth]{tri_reg_round_14b.pdf} 
-    \caption{Normalized (by max) Extinction cross section of a rectangle.  Original trimesh, regular, and regular with 
-    roundness. Long edge configuration (electric field parallel to the longer dimension)}
-    \label{fig:tri_reg_round_14b}
+    roundness. Short edge configuration (electric field parallel to the shorter (left) dimension)}
+    \label{fig:tri_reg_round_14}
  \end{figure}
 
 
@@ -97,19 +91,14 @@ therefore we decided to go with the default setting.
 
  \begin{figure}
     \centering
-    \includegraphics[width=0.85\textwidth]{replication_14a.pdf} 
+    \subfloat{\includegraphics[width=0.45\textwidth]{replication_14a.pdf}}
+    \subfloat{\includegraphics[width=0.45\textwidth]{replication_14b.pdf}} 
+
     \caption{Normalized (by max) Extinction cross section of a rectangle. Replication of 
-    the short edge configuration (electric field parallel to the shorter dimension)}
-    \label{fig:rep_14a}
+    the short (long) edge configuration (electric field parallel to the shorter (longer) dimension)}
+    \label{fig:rep_14}
  \end{figure}
 
- \begin{figure}
-    \centering
-    \includegraphics[width=0.85\textwidth]{replication_14b.pdf} 
-    \caption{Normalized (by max) Extinction cross section of a rectangle. Replication of the 
-    long edge configuration (electric field parallel to the longer dimension)}
-    \label{fig:rep_14b}
- \end{figure}
 
  \section{Ellis replication and validation}
 
@@ -129,7 +118,7 @@ of the pillar that is not the height.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.95\textwidth]{AR_22_vs_norm.pdf} 
+    \includegraphics[width=0.85\textwidth]{AR_22_vs_norm.pdf} 
     \caption{ Extinction cross section across wave number for SiC pillars of multiple Aspect ratios. 
              (H=950 nm, W=400nm, L=400-2800 (AR=1-7))
             Normalized by maximum extinction cross section as a function of wave number,
