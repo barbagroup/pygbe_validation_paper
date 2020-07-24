@@ -29,16 +29,27 @@ It encompasses both code correctness, and solution accuracy.
 We like to say that ``verification is solving the equations right, and validation is solving the right equations'' (source unknown). 
 But in reality the exercise can be much more complicated than this sounds. 
 Computational models in most cases are built in a hierarchy of simplifications and approximations, and comparing with the physical world means conducting experiments, which themselves carry uncertainties. 
+
 As we will discuss in this paper, verification and validation in contexts that involve complex physics at less tractable scales (either very small, or very large), or where experimental methods are nascent, proceeds in a tangle of researcher judgements and path finding. 
+In practice, validation activities reported in the scholarly literature often concentrate on using a stylized benchmark, and comparing experimental measurements with the results from computational models on that benchmark. 
+Seldom do these activities address the key principles of pursuing validation in a hierarchical fashion from the component to the system level, and of assessing the predictive capability of the computational model accounting for various sources of uncertainties. 
+Comprehensive validation studies are difficult, expensive, and time consuming. 
+Often, they are severely limited by practical constraints, and the conclusions equivocal. 
+Yet the computational models still provide useful insights into the research or engineering question at hand, and we build trust on them little by little.
 
-\medskip
+Verification and validation align on one axis of the multi-dimensional question of when are claims to knowledge arising from modeling and simulation justified, credible, true \cite{winsberg-2010}.
+Two other axes of this question are: reproducibility and replication, and uncertainty quantification (UQ).
+Uncertainty quantification uses statistical methods to give objective confidence levels for the results of simulations. 
+Uncertainties typically stem from input data, modeling errors, genuine physical uncertainties, random processes, and so on. 
+A scientific study may be reproducible, the simulations within it undergone V\&V, yet the results are still uncertain. 
+Building confidence in scientific findings obtained through computational modeling and simulation entails efforts in the three ``axes of truth'' described here.
 
-Reproducibility and replication (we could call it R\&R), on the other hand, preoccupy scientific communities more recently. 
+Reproducibility and replication (we could call it R\&R) preoccupy scientific communities more recently. 
 Agreement on the terminology, to begin with, has been elusive \cite{barba2018}. 
 The National Academies of Science, Engineering and Medicine (NASEM) released in May 2019 a consensus study report on Replicability and Reproducibility in Science \cite{NASEM2019} with definitions as follows.
 ``Reproducibility is obtaining consistent results using the same input data, computational steps, methods, and code, and conditions of analysis.
 Replicability is obtaining consistent measurements or results, or drawing consistent conclusions using new data, methods, or conditions, in a study aimed at the same scientific question.''
-According to these definitions, reproducibility demands full transparency of the computational workflow, which at the very least means open code and open data?where `open` means shared at time of publication (or earlier) under a standard public license. 
+According to these definitions, reproducibility demands full transparency of the computational workflow, which at the very least means open code and open data, where `open` means shared at time of publication (or earlier) under a standard public license. 
 This condition is hardly common: among the few systematic efforts to assess the state of reproducibility that have been made, more than half of surveyed works cannot be reproduced, mainly due to missing digital artifacts.
 
 
