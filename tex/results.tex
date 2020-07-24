@@ -3,16 +3,16 @@
 \subsection{Replication of results from Rockstuhl, et al., 2005}
 
 %%% Rockstuhl work summary%%%%
-The work of Rockstuhl et al.\cite{rockstuhl2005} study the phonon-polariton response of silicon carbide (SiC)
+The work of Rockstuhl et al.\cite{rockstuhl2005} studies the phonon-polariton response of silicon carbide (SiC)
 nanoparticles using the boundary element method. They analyze different "cylindrical particles"
-made of 6H-SiC as a function of geometrical cross section. These "cylinders" have an infinite
-extension in the third dimension, and they solve these geometries numerically with a 2D 
-boundary element method from their previous work \cite{rockstuhl2003}. 
+made of 6H-SiC as a function of geometrical cross section.They use a 2D boundary element method 
+previously developed by the group \cite{rockstuhl2003}, where they extend third dimension to infinity
+(hence the name cylinder).
 %%% Rockstuhl work summary%%%%
 
-We decided to replicate one of the results that they present on Fig.14 of their paper, which 
-presents the scattering cross section of a SiC rectangular cylinder for three different object 
-sizes. To comply with our quasistatic approach ($\lambda > d$ where $d$ is the characteristic
+We decided to replicate one of the results presented on Fig.14 of their paper \cite{rockstuhl2005}, which 
+presents the scattering cross section of a SiC rectangular cylinder for three different aspect ratios. 
+To comply with our quasistatic approach ($\lambda > d$ where $d$ is the characteristic
 dimension of the geometry) we chose the particular case where a=672 nm and b=328 nm.
 
 \textbf{Difference between methods, mesh and dielectric data}
@@ -339,7 +339,7 @@ Since our simulations do not count for coupling effects, we can not strictly imi
 the conditions to validate our solver. However, from Figure S4 on the supplementary 
 material of Ellis et al, we know that coupling effects affect the $E^{\parallel}_{100}$ 
 mode by a shift of 12.17 cm$^-1$. Therefore as a \textit{first order correction} we can 
-subtract this value from our simulations, to contemplate for coupling effects. In Figure 
+subtract this value from our simulations to count for coupling effects. In Figure 
 \ref{fig:val_2a} we present the result after applying the correction for coupling effects.
 It is worth mentioning that the far left (837 cm$^-1$) and far right (964 cm$^-1$) peaks 
 on Ellis results, are peaks associated with zone-folded LO (longitudinal) phonons, in 
