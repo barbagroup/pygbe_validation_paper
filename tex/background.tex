@@ -92,4 +92,14 @@ Still many questions remain answered both to understand the gaps left by existin
 
 \subsection{Description of the PyGBe software}
 
+Our research group has been developing PyGBe---pronounced \emph{pigb\={e}}---for several years. 
+It was first written for biomolecular-electrostatics calculations using a continuum model of proteins in water or an ionic solution. 
+The solution method applies a boundary integral approximation of the governing Poisson-Boltzmann or Poisson equations, to obtain electrostatic field and potential on the molecular surface. 
+In the implicit-solvent model, this information is used to compute the quantity of interest: solvation energy, which is diagnostic for questions of protein binding affinity, protein-surface interactions, and others. 
+PyGBe uses a fast-summation algorithm via a Barnes-Hut treecode \cite{BarnesHut1986}, and accelerates the computationally intensive parts of the code on NVIDIA GPU hardware using CUDA kernels in the treecode, interfacing with PyCUDA \cite{klockner2012pycuda}. 
+Other portions of the code are written in C$++$, wrapped using \texttt{swig}, to extract more performance \cite{CooperETal2016}. 
+
+
 \subsection{Physics context for this work}
+
+
