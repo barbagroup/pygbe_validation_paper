@@ -50,7 +50,44 @@ The National Academies of Science, Engineering and Medicine (NASEM) released in 
 ``Reproducibility is obtaining consistent results using the same input data, computational steps, methods, and code, and conditions of analysis.
 Replicability is obtaining consistent measurements or results, or drawing consistent conclusions using new data, methods, or conditions, in a study aimed at the same scientific question.''
 According to these definitions, reproducibility demands full transparency of the computational workflow, which at the very least means open code and open data, where `open` means shared at time of publication (or earlier) under a standard public license. 
-This condition is hardly common: among the few systematic efforts to assess the state of reproducibility that have been made, more than half of surveyed works cannot be reproduced, mainly due to missing digital artifacts.
+This condition is infrequently satisfied.
+The NASEM report describes how a number of systematic efforts to reproduce computational results have failed in more than half of the attempts made, mainly due to insufficient detail on digital artifacts, such as data, code and computational workflow \cite{moraila-etal-2014,iqbal-etal-2016,chang-li2018,stodden-etal-2018}. 
+Recommendation 4-1 of the NASEM report states that 
+``to help ensure reproducibility of computational results, researchers should convey clear, specific, and complete information about any computational methods and data products that support their published results in order to enable other researchers to repeat the analysis, unless such information is restricted by nonpublic data policies. That information should include the data, study methods, and computational environment'' \cite{NASEM2019}.
+
+Although it may seem evident that running an analysis with identical inputs would result in identical outputs, this is sometimes not true. 
+For example, the combination of floating-point representation of numbers and parallel processing means that running the same software with the same input data may give different numerical results. 
+In some research settings, it may make sense to relax the requirement of bitwise reproducibility and settle on reproducible results within an accepted range of variation (or uncertainty). 
+This can only be decided, however, after fully understanding the numerical-analysis issues affecting the outcomes---and the risk associated with an uncertainty range. 
+Researchers using high-performance computing thus recognize that when different runs with the same input data produce slightly different numeric outputs, each of these results is equally credible, and the output must be understood as an approximation to the correct value within a certain accepted uncertainty.
+
+Beyond the particulars of high-performance or parallel computing, what makes reproducibility so difficult to achieve? 
+A number of factors can contribute to the lack of reproducibility in research. 
+In addition to lack of access to non-public data and code, the NASEM report lists the following contributors to lack of reproducibility:
+
+\begin{enumerate}
+
+\item[$\triangleright$] Inadequate record-keeping: the original researchers did not properly record the relevant digital artifacts such as protocols or steps followed to obtain the results, the details of the computational environment and software dependencies, and/or information on the archival of all necessary data.
+\item[$\triangleright$]  Non-transparent reporting: the original researchers did not transparently report and provide open access to or archive the relevant digital artifacts necessary for reproducibility.
+\item[$\triangleright$]  Obsolescence of the digital artifacts: over time, the digital artifacts in the research compendium are compromised because of technological breakdown and evolution or lack of continued curation.
+\item[$\triangleright$]  Flawed attempts to reproduce others' research: the researchers who attempted to reproduce the work lacked expertise or failed to correctly follow the research protocols.
+\item[$\triangleright$]  Barriers in the culture of research: lack of resources and incentives to adopt computationally reproducible and transparent research across fields and researchers.
+
+\end{enumerate}
+
+Improving computational reproducibility hinges on capturing and sharing information about the computational environment and steps required to collect, process, and analyze data.
+Scientific workflows represent a complex flow of data products through various steps of collection, transformation, and analysis to produce an interpretable result. 
+Capturing provenance of the result is increasingly difficult to do using manual processes. 
+Thus, to support computational reproducibility, efforts have been under way for several years to develop workflow-management systems that capture and store data and workflow provenance automatically. 
+With such systems, results can be reliably linked to the computational process that derived them, and computational tasks can be automated, allowing them to be rerun and shared.
+With regards to software management, version-control systems are used to automatically capture the history of all changes made to the source code of a computer program. 
+This creates a history of changes and allows the developers to better understand the code and to identify possible problems or errors.
+Recently, the concept of version control has been extended to data files. 
+These files are generally too large to be stored in standard version-control systems, and they are often in a binary format that cannot be versioned. 
+Rather, data version control excludes the large data files from the main versioned repository, automatically collects data provenance, records data processing steps into a (reproducible) pipeline, and connects with cloud services where large data files are stored.
+Recent technological advances in version control, virtualization, computational notebooks, and automatic provenance tracking have the potential to simplify reproducibility, and tools have been developed that leverage these technologies.
+Still many questions remain answered both to understand the gaps left by existing tools and to develop principled approaches that fill those gaps. 
+
 
 
 \subsection{Description of the PyGBe software}
