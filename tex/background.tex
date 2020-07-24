@@ -93,12 +93,25 @@ Still many questions remain answered both to understand the gaps left by existin
 \subsection{Description of the PyGBe software}
 
 Our research group has been developing PyGBe---pronounced \emph{pigb\={e}}---for several years. 
-It was first written for biomolecular-electrostatics calculations using a continuum model of proteins in water or an ionic solution. 
-The solution method applies a boundary integral approximation of the governing Poisson-Boltzmann or Poisson equations, to obtain electrostatic field and potential on the molecular surface. 
+It was first written for biomolecular-electrostatics calculations using a continuum model of proteins in water or an ionic solvent. 
+The computational model applies a boundary integral form of the governing Poisson-Boltzmann and Poisson equations, to obtain the electrostatic field and potential on the molecular surface. 
 In the implicit-solvent model, this information is used to compute the quantity of interest: solvation energy, which is diagnostic for questions of protein binding affinity, protein-surface interactions, and others. 
-PyGBe uses a fast-summation algorithm via a Barnes-Hut treecode \cite{BarnesHut1986}, and accelerates the computationally intensive parts of the code on NVIDIA GPU hardware using CUDA kernels in the treecode, interfacing with PyCUDA \cite{klockner2012pycuda}. 
+Biomolecules are modeled as dielectric cavities inside an infinite continuum solvent, and the partial differential equations are solved via a boundary element method, leading to a dense linear system of equations. 
+PyGBe uses a fast-summation algorithm via a Barnes-Hut treecode \cite{BarnesHut1986}, and accelerates the computationally intensive parts of the code on Nvidia GPU hardware using CUDA kernels in the treecode, interfacing with PyCUDA \cite{klockner2012pycuda}. 
 Other portions of the code are written in C$++$, wrapped using \texttt{swig}, to extract more performance \cite{CooperETal2016}. 
+These features allow PyGBe to handle problems with half a million boundary elements or more. 
 
+In more recent work, we expanded the capabilities of PyGBE to applications of computational nanoplasmonics for biosensing \cite{ClementiETal2019}. 
+Applying the long-wavelength limit, one can model the phenomenon of localized surface plasmon resonance (LSPR) via electrostatics, instead of the full Maxwell equations. 
+This phenomenon is harnessed in nanosensors for detecting with high sensitivity the presence of biomolecules through shifts in resonance frequency. 
+In LSPR, an electromagnetic wave excites the free electrons on the surface of a metallic nanoparticle. 
+The name given to these electron-cloud vibrations is plasmons. 
+In this setting, they resonate with the incoming field, and the energy is either absorbed by the nanoparticle or scattered in all directions, causing what's called extinction.
+Since the resonance frequency depends on the dielectric environment, the change produced by a biomolecule approaching the metallic nanoparticle results in a frequency shift, and a means of detecting its presence.
+The electrostatic approximation allows using the methods implemented in PyGBe, after substantial code development to permit using complex-valued permittivities, and to incorporate an external electric field into the model. 
+These changes included re-writing the Krylov iterative solver to work with complex numbers, and splitting the treecode evaluation into real and imaginary parts. 
+New functions were added to read from configuration files the data describing the electric field, to compute the dipole moment, and to compute the final quantity of interest: extinction cross-section. 
+We reported a major new release of the software in 2017 \cite{ClementiETal2017}.
 
 \subsection{Physics context for this work}
 
