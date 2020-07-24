@@ -277,11 +277,11 @@ the cases
  
  \begin{table}
     \centering
-    \label{tab:err_AR}
     \caption{Percentage error for different aspect ratios.} 
+    \label{tab:err_AR}
     \begin{tabular}{c c}
     \hline%\toprule
-    ARR & \% error \\
+    AR & \% error \\
     \hline%\midrule
      $1$ & $0.95$ \\
      $2$ & $0.67$ \\
@@ -294,23 +294,43 @@ the cases
     \end{tabular}
 \end{table}
 
+\subsubsection{Validation of \pygbe against Fig 2a experimental results}
 
-\pygbe AR=4 attempt of validation Figure 2a (see Figure \ref{fig:pygbe_vs_exp_2a})
+For the case of aspect ratio four (AR=4) we obtain the smallest error using the uniform
+mesh. Since we count with the mesh provided by the authors, and knowing that our computation 
+for the mode $E^{\parallel}_{100}$ compares well with their computations, we attempted to 
+validate our simulations with their experimental results (red curve on paper), as well 
+as to replicate their simulations (green curve on paper) on Figure 2a of their paper.
+Figure 2a of Ellis et al, presents measured and simulated reflectance of SiC pillar
+arrays with a 500 nm gap. All their measurements and simulations were performed with 
+22$^\circ$ off-normal angle of incidence and incoming polarization parallel to the 
+elongated size of the pillar. 
+
+Using \pygbe we compute the extinction cross section of an isolated SiC pillar (AR=4)
+with no substrate, submerged in air under a constant electric field in the z-direction, 
+and rotate the orientation of the pillar to match the angle of incidence. 
+(SHOULD PROBABLY PUT A DIAGRAM OF THIS). In Figure \ref{fig:pygbe_vs_exp_2a} we present 
+comparison of our simulations and the experimental results from Ellis et al. There is a 
+difference in the peaks wavelength that is noticeable. This could be attributed to the
+fact that in their experiments the separation between pillars is of 500 nm, which implies
+there are coupling effects that in our simulations are not contemplated.  
 
 \begin{figure}
     \centering
     \includegraphics[width=0.85\textwidth]{pygbe_vs_exp_fig2a_Ellis.pdf} 
-    \caption{\pygbe vs experiments, figure 2a of Ellis 2016. Ellis et al 
-    has near field interaction in its experiments. Ellis data was digitized
-    with web digitizer.}
+    \caption{\pygbe vs experiments of figure 2a of Ellis 2016. Ellis data 
+    was digitized with web digitizer.}
     \label{fig:pygbe_vs_exp_2a}
  \end{figure}
 
-First order approximation to achieve validation. In our code we do not have near 
-field interaction. From Figure S4 in supplementary material of Ellis et al. We know that 
-for the first mode ($E_{100}$) the difference between interaction and no interaction is 
-12.17 $cm^{-1}$ (obtained from digitized data). If we use this as a first order approximation,
-we can subtract that value from our curve, and the results are in Figure \ref{fig:val_2a}
+\paragraph{First order correction}
+
+Since our simulations do not count for coupling effects, we can not strictly imitate 
+the conditions to validate our solver. However, from Figure S4 on the supplementary 
+material of Ellis et al, we know that coupling effects affect the $E^{\parallel}_{100}$ 
+mode by a shift of 12.17 cm$^-1$. Therefore as a \textit{first order correction} we can 
+subtract this value from our simulations, to contemplate for coupling effects. In Figure 
+\ref{fig:val_2a} we present the result after applying the correction for coupling effects. 
 
 \begin{figure}
     \centering
