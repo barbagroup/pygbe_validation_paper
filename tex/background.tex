@@ -111,7 +111,14 @@ Since the resonance frequency depends on the dielectric environment, the change 
 The electrostatic approximation allows using the methods implemented in PyGBe, after substantial code development to permit using complex-valued permittivities, and to incorporate an external electric field into the model. 
 These changes included re-writing the Krylov iterative solver to work with complex numbers, and splitting the treecode evaluation into real and imaginary parts. 
 New functions were added to read from configuration files the data describing the electric field, to compute the dipole moment, and to compute the final quantity of interest: extinction cross-section. 
-We reported a major new release of the software in 2017 \cite{ClementiETal2017}.
+We reported a major new release of the software in 2017 \cite{ClementiETal2017}, and later  presented the mathematical formulation for electromagnetic scattering in the long-wavelength setting and its associated continuum and discretized integral equations, and results including verification activities and a sensitivity calculations on a biosensor model \cite{ClementiETal2019}. 
+For verification, we conducted grid-convergence studies in two settings.
+In the first, we set up a computational model for a spherical silver nanoparticle in a constant electric field, leading to an analytical solution for the extinction cross-section. 
+The second case does not have a closed form solution: a spherical nanoparticle with a nearby protein (analyte), under an electric field. 
+To estimate relative errors in the extinction cross-section, in this case, we made use of the method of Richardson extrapolation.
+These verification activities build our confidence on the computational model---moreover, our work was published following careful reproducibility practices, including the release of reproducibility packages for all results. 
+Nevertheless, the gold standard of confidence in the predictive capability of the model comes from validation: hunting for an opportunity to conduct validation studies with PyGBe in these settings led us through the twisted path that we report in this paper.
+
 
 \subsection{Physics context for this work}
 
