@@ -379,6 +379,11 @@ Figure 2 of their paper (green curve) we get (see Figure \ref{fig:rep_2a})
  Barba (2019) describes the elements of reproducible computational research that we have adopted in our practice \cite{barba2019praxis}. 
  A key element is professional software management and engineering, and the central technology solution is version control. 
  Preserving a complete history of changes is the only way to manage complex software projects that can support reproducibility.
+ Another key element of transparent and reproducible computational modeling is \emph{automation}.
+Automating every step means \emph{turning protocols into code.}
+For example, simulations are launched with parameters fed from a configuration file rather than an interactive prompt, and all figures and plots are produced by writing scripts, rather than pointing-and-clicking on a graphical interface. 
+The goal is to create complete ``recipes'' in code, which can be run, versioned, and shared. 
+
 Our signature reproducibility practice is to organize and share in an archival-quality repository (providing a global identifier) all digital artifacts associated with the results in the paper. 
-This includes input files, configuration files, post-processing scripts, files specifying the build process and containerization (e.g., Docker files), and even cloud computing machine definitions, if applicable \citep{mesnard-barba2019}.
+This includes input files, configuration files, post-processing scripts, files specifying the build process and containerization (e.g., Docker files), and even cloud computing machine definitions, if applicable \cite{mesnard-barba2019}.
 We call these openly shared file sets \emph{reproducibility packages}, or repro-packs for short.
