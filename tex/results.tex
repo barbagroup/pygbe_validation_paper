@@ -151,10 +151,10 @@ this is a consequence of the 3D nature of our geometry.
 The work of Ellis and coworkers \cite{ellis2016} study the aspect-ratio evolution of high-order
 resonant modes in localized surface phonon-polariton nanostructures. They study the
 excitation of multipolar localized surface phonon polaritons (SPhP) resonances, by measuring
-polarized reflectance measurements on 4H-SiC pillars of fixed height ($H=950$ nm), fixed 
+polarized reflectance on 4H-SiC pillars of fixed height ($H=950$ nm), fixed 
 width ($W=400$ nm) and varied length ($L=400-4800$ nm) and therefore an aspect ratio
 ($AR=L/W=1-12$). These pillars are patterned on a squared grid with a pitch $P=L+500$ nm
-to reduce coupling. In their simulations and experiments they excite the localized SPhP
+to reduce coupling. In  both their simulations and experiments they excite the localized SPhP
 resonances, they perform polarized reflectance measurements with the incident polarization 
 oriented parallel or perpendicular to the long axis of the pillars.  
  %%% Ellis work summary %%%%
@@ -163,41 +163,46 @@ We aim to replicate the computational result presented in Figure S4 of their sup
 material (NOT SURE HOW TO CITE THIS) that correspond to the black curve on their plot. In this 
 figure they show simulation results for the resonance spectral position of the lower frequency 
 mode when having parallel polarization ($E^{\parallel}_{100}$), with an incidence angle of 22$^\circ$.
-We first attempted to replicate this result since they have simulations with the gap between pillars 
-is 5000 nm, and this cause negligible coupling. This result is suitable to compare with 
+We first attempted to replicate this result since they have results where the gap between pillars 
+is 5000 nm (10 times more than in the experiments and other simulations on the paper), and 
+this diminishes the effects of coupling. This result is suitable to compare with 
 what we can model using \pygbe.  
-
-
 
 
 \textbf{Difference between methods, mesh and dielectric data}
 
 \textit{methods}
-In Ellis et al simulations they solve full Maxwell equations via the RF package of the finite
+(I DID NOT MENTION ANYTHING RELATED TO WHAT THEY DO IN THE EXPERIMENTS, SHOULD WE INCLUDE THIS?)
+
+In Ellis et al. simulations they solve full Maxwell equations via the RF package of the finite
 element method software COMSOL. To represent the array of pillars and their interactions, they use
-periodic boundary conditions of one pillar over a portion of substrate. They present the reflectance 
-as a function of the wave number. As we mentioned before, we use the boundary element method in 
+periodic boundary conditions of one pillar over a portion of substrate, and use periodic boundary conditions on it.
+They present the reflectance as a function of the wave number. 
+As we mentioned before, we use the boundary element method in 
 the quasistatic approximation, which is suitable in these case since Ellis pillar's size is small 
-compared to the wavelength involved in the simulations (800-1000 cm$^-1$). We measure extinction cross 
-section, which will express as peaks instead of inverted peaks (as in reflection) since you see maximum
-extinction when there is minimum reflection. The intensity of the peaks is not comparable, but we are 
-looking to match the wave number at which these events happen. 
+compared to the wavelength involved in the simulations (800-1000 cm$^-1$ which is 10000-12500 nm). We measure 
+extinction cross section, which will express as peaks instead of depressions (as seen in Ellis reflection plots)
+since you see maximum extinction when there is minimum reflection. The intensity of the peaks is not comparable, but we are 
+looking to match the wave number (variable of interest) at which these events happen. 
 
 \textit{mesh}
-For the case of aspect ratio AR=4 we count with a triangular surface mesh provided by the authors of 
-Ellis et al. Which is a non-structured mesh of approximately 4 thousand elements. To produce the remaining 
+For the case of aspect ratio $AR=4$ we count with a triangular surface mesh provided by the authors of 
+Ellis et al. Which is a non-structured (HOW IS IT CALLED WHEN IS FINER WHER THERE ARE CORNERS?) mesh of
+approximately four thousand elements. To produce the remaining 
 meshes, we use our python script to generate a uniform mesh and round the edges using Trimesh. 
 After doing certain refinement studies we noticed that to achieve close results to the original mesh, using a
-uniform mesh, we needed to double the density (I HAVE SOME PLOTS ON THIS RESULTS BUT 
-I'M NOT SURE IF WE WANT TO PUT THEM, SINCE WE DON'T HAVE SPACE).
+uniform mesh, we needed approximately double the density (I HAVE SOME PLOTS ON THIS RESULTS BUT 
+I'M NOT SURE IF WE WANT TO PUT THEM).
 To replicate the results of figure S4 on their supplementary material, we use uniform meshes. While for the 
 replication of figure 2a and the validation result we used the mesh provided by the authors of Ellis et al. 
 
 
 \textit{dielectric data}
-The dielectric data for the simulations, was given by the authors of the paper via a private communication. 
+The dielectric data for the simulations, was given by the authors of the paper via a private communication, 
+and corresponds to experimental values of the dielectric. 
 
-To be able to replicate this results, we need to identify the lower frequency mode for each of
+To be able to replicate the result of Figure S4 of the suplementary material of Ellis et al, we
+need to identify the lower frequency mode for each of
 the aspect ratios in our computations. For each aspect ratio (AR) 
 value from 1 to 7 we computed the extinction cross section $C_{ext}$ across the wave number in the range
 800-1000 $cm^{-1}$. We identify the lower frequency mode ($E^{\parallel}_{100}$ in Ellis paper)  that is not a 
