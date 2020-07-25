@@ -62,23 +62,23 @@ in the following results where we attempt a replication of one of teh results of
 \subsubsection{Replication of Figure 14 (case a1) of Rockstuhl 2005}
 
 We chose to replicate the result of Rocksuthl et al. presented in Figure 14. In particular the case where $a=672$ nm 
-and $b=328$ nmn, since these dimension comply with the requirements of the quasistatic approximation.
-They present the normalized scattering cross section of a SiC rectangular cylinder, and they perform simulation 
-for two different setups. In Rockstuhl Figure 14 (left) they have the wave vector (illumination) along the long 
-side of the geometry, which means that the electric field is parallel to the short side of the rectangle. Following, 
-a similar analysis Rockstuhl Figure 14 (right) they have the wave vector (illumination) along the short
-side of the geometry, which means that the electric field is parallel to the long side of the rectangle. These orientations,
-correspond to the images (A) and (B) in the sketch presented in Figure \ref{fig:rectangle_sketch}.
+and $b=328$ nm, since these dimension comply well with the requirements of the quasistatic approximation needed 
+to use \pygbe. In Rcokstuhl et al. work they present the normalized scattering cross section of a SiC rectangular 
+cylinder, and they perform simulation for two different setups (see Figure \ref{fig:rectangle_sketch}). In 
+Rockstuhl Figure 14 (left) they have the wave vector (illumination) along the long 
+side of the geometry, which means that the electric field is parallel to the short side of the rectangle (like in 
+Figure \ref{fig:rectangle_sketch} (B)). Following, a similar analysis Rockstuhl Figure 14 (right) they have the wave 
+vector (illumination) along the short side of the geometry, which means that the electric field is parallel to the 
+long side of the rectangle (like in Figure \ref{fig:rectangle_sketch} (A). 
 
-Based on the results of the grid independence stud we decided to we used the density of the cube as a reference to 
-produce the meshes for the replication of figures 14a and 14b on Rockstuhl's work (case a1=672, b=328). For the third 
-dimension we needed to chose a value that represents "infinity". To achieve this, we perform a study on the effects of 
-elongate the third dimension. In Figure \ref{fig:ext_y_14} we present the results for two different values of the 
-third dimension, $y=1344$ nm (2xa) and $y=2688$ nm (4xa). 
-We see that as we extend the third dimension the intensity of some peaks decreases, this is because some
-of the peaks are related to the third dimension. Therefore, from now on we use $y=y=2688$ nm. It is worth 
-noting that we could have increased this value more, however, the simulations will become computational
-more expensive and we will still have the effects of having a 3D model.
+Based on the results of the grid independence study we decided to use the densities in the order of $6-9e^-5$
+to produce the meshes for the replication of figures 14a and 14b on Rockstuhl's work (case a1=672, b=328). For the third 
+dimension we needed to chose a value that represents "infinity". To achieve this, we study the effects of 
+elongation on the third dimension. In Figure \ref{fig:ext_y_14} we present the results for two different
+values of the third dimension, $y=1344$ nm (2xa) and $y=2688$ nm (4xa). We see that as we extend $y$ the 
+intensity of some peaks decreases, this is because some of the peaks are related to this component. Therefore, 
+from now on we use $y=2688$ nm. It is worth noting that we could have increased this value more, however, the
+simulations will become computational more expensive and we will still have the effects of having a 3D model.
 
 \begin{figure}
     \centering
@@ -102,13 +102,13 @@ more expensive and we will still have the effects of having a 3D model.
  \end{figure}
 
 
-To generate the meshes for these simulations, we used the open source software Trimesh 
+To generate the meshes for these simulations, we initially used the open source software Trimesh 
 (\url{https://github.com/mikedh/trimesh}), but we realized that it was not producing a 
 uniform mesh and that it was not possible to produce regular triangles with the functions 
-available. To overcome this, we created our own mesh using python scripts, and therefore 
-obtain uniform meshes. We wanted to study the effect of a uniform mesh as well as the effect
-on rounding the edges. We wanted to round the edges since in Rockstuhl work this was mentioned 
-as a factor that will introduce extra peaks on the response. We were not able to control the 
+available when having a prism. To overcome this, we created our own mesh using python scripts,
+and create uniform meshes. We wanted to study the effect of a uniform mesh as well as the effect
+of rounding the edges. We wanted to round the edges since in Rockstuhl work this was mentioned 
+as a factor that introduces extra peaks on the response. We were not able to control the 
 roundness as a function of arc of curvature or the dimensions of the rectangular prism, so we 
 decided to use the default settings on Trimesh. Figure \ref{fig:tri_reg_round_14} shows the 
 results on the effect of uniformity and roundness. You can see that the second peak is not
