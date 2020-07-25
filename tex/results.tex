@@ -17,31 +17,33 @@ dimension of the geometry) we chose the particular case where a=672 nm and b=328
 
 \textbf{Difference between methods, mesh and dielectric data}
 
-\textit{method}: The main difference between Rockstuhl simulations and ours is that they solve a 2D problem, 
-while we solve a 3D model. In our case the geometry has a finite third dimension. To cope with this
-we will extend the third direction considerably, and study this effect.
-We compute extinction cross section (scattering plus absorption) while Rockstuhl work present only scattering. 
-But since in both scattering and absorption the resonance occur at the same wavelengths, the results are 
-comparable.
+\textit{method}: The main difference between Rockstuhl simulations and ours is that they solve a 2D problem of 
+full Maxwell equations, while we solve a 3D problem with the electrostatic approximation . 
+We do not count with information on their code implementations, discretization schemes, or solver.  
+We compute extinction cross section (scattering plus absorption) while Rockstuhl work present only scattering
+cross section. But since  the variable of interest is the wavelength at which the resonance modes occur, the 
+results are comparable.
 
-\textit{mesh}: Their work does not provide any details regarding the discretization of their geometries or 
-parameters involved in the simulations. We performed a grid independence study to make sure that we are
-solving properly the physics and minimizing errors due to discretization. 
+\textit{mesh}: Their work does not provide any details regarding the discretization of the geometries or 
+parameters involved in the simulations.
+We performed a grid independence study to make sure that we are solving properly the equations and 
+minimizing errors due to discretization. Rockstuhl has a 2D geometry (infinite third dimension) while we deal 
+with a 3D representation of the geometry. 
 
-\textit{dielectric data}: The use 6H-SiC as material, and they obtained their data from a a source that we
+\textit{dielectric data}: They use 6H-SiC as material, and they obtained their data from a a source that we
 were not able to replicate. Instead we are using experimental data for 4h-SiC that was provided to us 
-via private communications.  
+via private communications from the authors of Ellis et al \cite{ellis2016}.  
 
 \subsubsection{Grid independance study}
 
 We performed a grid independence study on a SiC cube of side $L=535$ nm submerged in air, under a 
-constant electric field aligned with the z-axis.
-(similar to quadratic cylinder on Fig 18 of Rockstuhl et.al). 
-Due to the nature of the geometry, and its sharp edges it was challenging to see proper convergence. However,
-for this type of physics, convergence has been studied in our previous work \cite{ClementiETal2019}. 
-In the Figure \ref{fig:cube535} we show a grid independence study, where we go from a mesh of 15552 
+constant electric field aligned with the z-axis (similar setup to quadratic cylinder on Fig 18 of 
+Rockstuhl et.al)\cite{rockstuhl2005}. 
+Due to the nature of the geometry and its sharp edges it was challenging to see proper convergence. However,
+for this type of physics, convergence has been studied in our previous work \cite{ClementiETal2019}. (NOT SURE IF WE NEED TO MENTION THIS)
+Figure \ref{fig:cube535} shows the grid independence study where we go from a mesh of 15552 
 triangles (density = 1.11x10$^-4$ $N/\text{\AA}$) to 19200 (density = 9.05x10$^-5$ $N/\text{\AA}$) 
-triangles and the computed results do not change.
+triangles, and the computed results do not change.
 
 \begin{figure}
     \centering
@@ -52,10 +54,10 @@ triangles and the computed results do not change.
     \label{fig:cube535}
  \end{figure}
 
-It is worth noting that the extinction cross section curve in Figure \ref{fig:cube535} has extra peaks, 
+It is worth noting that the extinction cross section curve in Figure \ref{fig:cube535} has extra peaks 
 compared to the results of Figure 18 on Rockstuhl, this is due to the 3D nature of our case and the sharp 
-edges. This will be approach in the following results where we attempt a replication of one of teh results 
-of Figure 14 of Rockstuhl work.
+edges, being the latest an effect also mentioned in Rockstuhl et al. results. The 3D effect will be approach
+in the following results where we attempt a replication of one of teh results of Figure 14 of Rockstuhl work. 
 
 \subsubsection{Replication of Figure 14 (case a1) of Rockstuhl 2005}
 
@@ -218,7 +220,7 @@ rotating the geometry instead.
 Figure \ref{fig:AR_22_vs_norm} show the results of the extinction cross section of a SiC pillar of fixed
 height ($H=950$ nm), fixed width ($W=400$) and varied length ($L=400-2800$ nm). The simulations where performed 
 performed for the Long Edge orientation, meaning that the electric field is aligned with the length pillar 
-when having normal incidence. (I SHOULD PROBABLY MAKE A DIAGRAM OF THIS)
+when having normal incidence (see Figure \ref{fig:ellis_ang_inc}). 
 
 In Figure \ref{fig:AR_22_vs_norm} and Table \ref{tab:ar_peaks} we show the resonance peaks and
 their corresponding wavelengths. In the table we mark in bold the peaks which correspond to 
