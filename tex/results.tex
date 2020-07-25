@@ -11,7 +11,7 @@ previously developed by the group \cite{rockstuhl2003}, where they extend in the
 (hence the name ``cylinder'').
 %%% Rockstuhl work summary%%%%
 
-We decided to attemp to replicate one of the results presented on Fig.14 of their paper \cite{rockstuhl2005}:
+We decided to attempt to replicate one of the results presented on Fig.14 of their paper \cite{rockstuhl2005}:
 the scattering cross-section of a SiC rectangular cylinder for three different aspect ratios. 
 To comply with our quasistatic approach ($\lambda > d$ where $d$ is the characteristic
 dimension of the geometry), we chose the particular case where a=672 nm and b=328 nm.
@@ -152,22 +152,20 @@ that this is a consequence of the 3D effects in our geometry.
 The work of Ellis and coworkers \cite{ellis2016} study the aspect-ratio evolution of high-order
 resonant modes in localized surface phonon-polariton nanostructures. They study the
 excitation of multipolar localized surface phonon polaritons (SPhP) resonances, by measuring
-polarized reflectance on 4H-SiC pillars of fixed height ($H=950$ nm), fixed 
-width ($W=400$ nm) and varied length ($L=400-4800$ nm) and therefore an aspect ratio
-($AR=L/W=1-12$). These pillars are patterned on a squared grid with a pitch $P=L+500$ nm
-to reduce coupling. In  both their simulations and experiments they excite the localized SPhP
-resonances, they perform polarized reflectance measurements with the incident polarization 
+and computing polarized reflectance on 4H-SiC pillars of fixed height ($H=950$ nm), fixed 
+width ($W=400$ nm) and varied length ($L=400-4800$ nm). These pillars are patterned on a squared 
+grid with a pitch $P=L+500$ nm to reduce coupling. In both their simulations and experiments they 
+perform polarized reflectance measurements with the incident polarization 
 oriented parallel or perpendicular to the long axis of the pillars.  
  %%% Ellis work summary %%%%
 
-We aim to replicate the computational result presented in Figure S4 of their supplementary 
-material (NOT SURE HOW TO CITE THIS) that correspond to the black curve on their plot. In this 
+We first aim to replicate the computational result presented in Figure S4 of their supplementary 
+material that correspond to the black curve on their plot. In this 
 figure they show simulation results for the resonance spectral position of the lower frequency 
 mode when having parallel polarization ($E^{\parallel}_{100}$), with an incidence angle of 22$^\circ$.
-We first attempted to replicate this result since they have results where the gap between pillars 
-is 5000 nm (10 times more than in the experiments and other simulations on the paper), and 
-this diminishes the effects of coupling. This result is suitable to compare with 
-what we can model using \pygbe.  
+We attempted to replicate this result since the gap between the pillars 
+is 5000 nm (10 times more than other results), diminishing the effects of coupling, which makes it 
+a good candidate to replicate using \pygbe.  
 
 
 \textbf{Difference between methods, mesh and dielectric data}
@@ -188,7 +186,7 @@ looking to match the wave number (variable of interest) at which these events ha
 
 \textit{mesh}
 For the case of aspect ratio $AR=4$ we count with a triangular surface mesh provided by the authors of 
-Ellis et al. Which is a non-structured (HOW IS IT CALLED WHEN IS FINER WHER THERE ARE CORNERS?) mesh of
+Ellis et al. Which is a non-uniform mesh of
 approximately four thousand elements. To produce the remaining 
 meshes, we use our python script to generate a uniform mesh and round the edges using Trimesh. 
 After doing certain refinement studies we noticed that to achieve close results to the original mesh, using a
