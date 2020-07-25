@@ -122,18 +122,24 @@ Nevertheless, the gold standard of confidence in the predictive capability of th
 
 \subsection{Physics context for this work}
 
-In the last years polar dielectrics, like Silicon Carbide (SiC), have caught the attention as an alternative to plasmonic metals, due to their low optical losses in in the
-mid to long wave infrared. Nanostructures of these materials show figure of merits that are not possible using plasmonic metals. This effect is due to the properties 
-of the dielectric in the mid/long infrared region, where the real part has a negative value and the imaginary part is very small. This dielectric behavior is similar to the one 
-be observed in metals like silver in the blue part of the wavelength spectrum. 
-In plasmonics, when we illuminate a small particle made of metallic materials we will observe that certain wavelengths will excite a surface plasmon, which is the result of 
-the oscillation of free electrons. The main difference with polar dielectrics like SiC is that for this material, is that the frequency of the incoming light matches instead the
-resonance frequency of the Si and C sublattices \cite{caldwell2015,rockstuhl2005}. This excitation leads to a strong extinction cross section at the resonance wavelength, and an 
-enhanced near field amplitude. These behaviors can be model with the same approached used for Localized surface plasmon resonance, and when the wavelength is bigger than the size
-of the nanoparticle, we can still applied the electrostatic approach implemented in \pygbe \cite{ClementiETal2017, ClementiETal2019}.
+In recent years, polar dielectrics such as Silicon Carbide (SiC) have caught the attention of researchers as an alternative to plasmonic metals, 
+due to their low optical losses in in the mid- to long-wave infrared range. 
+Nanostructures made of these materials offer sensing capabilities, described by their \emph{figure of merits}, that are unattainable with plasmonic metals. 
+The figure of merits of a nanoparticle is defined as the ratio between the sensitivity and the width of the resonance peak \cite{otte-etal-2012}. 
+In turn, sensitivity is the shift in the resonance position divided by the change in the refractive index: 
+$S = \Delta \lambda / \Delta n$.
+The dielectric of these materials has a negative real part and a very small imaginary part, in the mid/long infrared region. 
+This dielectric behavior is similar to that observed in metals like silver in the blue part of the wavelength spectrum. 
+In plasmonics, when illuminating a small particle made of metallic materials, we will observe that certain wavelengths excite a surface plasmon. 
+The main difference with polar dielectrics like SiC is that for this material the frequency of the incoming light matches instead the resonance frequency of the Si and C sub-lattices \cite{caldwell2015,rockstuhl2005}. 
+This excitation leads to a strong extinction cross-section at the resonance wavelength, and an enhanced near-field amplitude. 
+These behaviors can be modeled with the same approaches used for localized surface plasmon resonance, and when the wavelength is much larger than the size
+of the nanoparticle, we can again apply the electrostatic approach implemented in \pygbe \cite{ClementiETal2017, ClementiETal2019}.
 
-When studying both Surface Phonon Polaritons and Surface Plasmons resonances, we can analyze the spectrums by measuring different quantities. We can measure scattering cross section, extinction cross section 
-(scattering plus absorption), as well as reflection. These different approaches are comparable since the \textit{variable of interest} is the wavelength/frequency at which 
-the resonance modes happen. Whether we measure reflection or extinction cross section, the wavelength/frequency at which the peaks happen remains the same. Along the course of this 
-work we will concentrate on study the wavelength/frequency at which the resonance modes happen and we will aim to replicate results from Rockstuhl et al. 2005 \cite{rockstuhl2005} and 
-from Ellis et al. 2016 \cite{ellis2016}, and we will validate our software against experimental results from Ellis et al. 2016 \cite{ellis2016}.
+When studying both surface phonon polaritons and surface plasmon resonances, we can analyze the spectrums by measuring different quantities. 
+We can measure scattering cross-section, extinction cross-section (scattering plus absorption), as well as reflection. 
+These different approaches are comparable since the \textit{quantity of interest} is the wavelength/frequency at which the resonance modes happen. 
+Whether we measure reflection or extinction cross-section, the wavelength (frequency) at which the peaks happen remains the same. 
+Throughout this work, we will concentrate on studying the wavelength (frequency) at which the resonance modes occur, 
+and we aim to replicate results from Rockstuhl et al.\ 2005 \cite{rockstuhl2005} and from Ellis et al.\ 2016 \cite{ellis2016}, 
+and to validate our software against experimental results from Ellis et al.\ 2016 \cite{ellis2016}.
