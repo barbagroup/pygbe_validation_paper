@@ -4,53 +4,52 @@
 
 %%% Rockstuhl work summary%%%%
 The work of Rockstuhl et al.\cite{rockstuhl2005} studies the phonon-polariton response of silicon carbide (SiC)
-nanoparticles using the boundary element method. They analyze different "cylindrical particles"
-made of 6H-SiC as a function of geometrical cross section.They use a 2D boundary element method 
-previously developed by the group \cite{rockstuhl2003}, where they extend third dimension to infinity
-(hence the name cylinder).
+nanoparticles using the boundary element method. They analyze different ``cylindrical particles''
+made of 6H-SiC, as a function of geometrical cross-section. 
+They use a two-dimensional (2D) boundary element method 
+previously developed by the group \cite{rockstuhl2003}, where they extend in the third dimension to infinity
+(hence the name ``cylinder'').
 %%% Rockstuhl work summary%%%%
 
-We decided to replicate one of the results presented on Fig.14 of their paper \cite{rockstuhl2005}, which 
-presents the scattering cross section of a SiC rectangular cylinder for three different aspect ratios. 
+We decided to attemp to replicate one of the results presented on Fig.14 of their paper \cite{rockstuhl2005}:
+the scattering cross-section of a SiC rectangular cylinder for three different aspect ratios. 
 To comply with our quasistatic approach ($\lambda > d$ where $d$ is the characteristic
-dimension of the geometry) we chose the particular case where a=672 nm and b=328 nm.
+dimension of the geometry), we chose the particular case where a=672 nm and b=328 nm.
 
-\textbf{Difference between methods, mesh and dielectric data}
+\subsubsection{Differences in method, mesh and dielectric data}
 
-\textit{method}: The main difference between Rockstuhl simulations and ours is that they solve a 2D problem of 
-full Maxwell equations, while we solve a 3D problem with the electrostatic approximation . 
-We do not count with information on their code implementations, discretization schemes, or solver.  
-We compute extinction cross section (scattering plus absorption) while Rockstuhl work present only scattering
-cross section. But since  the variable of interest is the wavelength at which the resonance modes occur, the 
-results are comparable.
+\paragraph{Method:} The main difference between the original simulations and ours is that they solve a 2D problem with the 
+full Maxwell equations, while we solve a 3D problem with the electrostatic approximation. 
+We lack any information about their code implementations, discretization schemes, or solver.  
+We computed extinction cross-section (scattering plus absorption) while Rockstuhl et al.\ present only scattering cross-section. 
+But, since the quantity of interest is the wavelength at which the resonance modes occur, the results can be compared.
 
-\textit{mesh}: Their work does not provide any details regarding the discretization of the geometries or 
+\paragraph{Mesh:} Rockstuhl et al.\ did not provide any details regarding the discretization of the geometries or 
 parameters involved in the simulations.
-We performed a grid independence study to make sure that we are solving properly the equations and 
-minimizing errors due to discretization. Rockstuhl has a 2D geometry (infinite third dimension) while we deal 
-with a 3D representation of the geometry. 
+We performed a grid-independence study as a form of solution verification, and to ensure that we are 
+minimizing errors due to discretization. Rockstuhl et al.\ used a 2D geometry (infinite third dimension), while we treat the geometry in its full 3D representation.
 
-\textit{dielectric data}: They use 6H-SiC as material, and they obtained their data from a a source that we
+\paragraph{Dielectric data:} The study uses 6H-SiC as material, and the authors obtained their data from a a source that we
 were not able to replicate. Instead we are using experimental data for 4h-SiC that was provided to us 
-via private communications from the authors of Ellis et al \cite{ellis2016}.  
+via private communications from the authors of Ellis et al.\cite{ellis2016}.  
 
-\subsubsection{Grid independance study}
+\subsubsection{Grid-independence study}
 
-We performed a grid independence study on a SiC cube of side $L=535$ nm submerged in air, under a 
-constant electric field aligned with the z-axis (similar setup to quadratic cylinder on Fig 18 of 
-Rockstuhl et.al)\cite{rockstuhl2005}. 
-Due to the nature of the geometry and its sharp edges it was challenging to see proper convergence. However,
+We performed a grid-independence study on a SiC cube of side $L=535$ nm submerged in air, under a 
+constant electric field aligned with the $z$-axis (a similar setup to the square cylinder on Fig. 18 of 
+Rockstuhl et al.\cite{rockstuhl2005}). 
+Due to the nature of the geometry and its sharp edges, it was challenging to see proper convergence. However,
 for this type of physics, convergence has been studied in our previous work \cite{ClementiETal2019}. (NOT SURE IF WE NEED TO MENTION THIS)
-Figure \ref{fig:cube535} shows the grid independence study where we go from a mesh of 15552 
-triangles (density = 1.11x10$^-4$ $N/\text{\AA}$) to 19200 (density = 9.05x10$^-5$ $N/\text{\AA}$) 
-triangles, and the computed results do not change.
+Figure \ref{fig:cube535} shows the grid-independence study, using meshes with  15,552 
+triangles (density $1.11\times10^-4$ $N/\text{\AA}$) to 19,200 (density $9.05\times10^-5$ $N/\text{\AA}$) 
+triangles: the computed results show no discernible difference.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.85\textwidth]{cubeL535nm_15Kvs19K.pdf} 
-    \caption{Grid independence study for a SiC cube of side $L=535 nm$ submerged in air under a constant 
-    electric field in the z-direction. The curves represent the extinction cross section divided by $L^2$ 
-    as a function of wavelength divided by $L$}
+    \caption{Grid-independence study for a SiC cube of side $L=535 nm$ submerged in air under a constant 
+    electric field in the $z$-direction. The curves represent the extinction cross-section divided by $L^2$ 
+    as a function of wavelength divided by $L$.}
     \label{fig:cube535}
  \end{figure}
 
