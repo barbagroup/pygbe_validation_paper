@@ -33,7 +33,7 @@ minimizing errors due to discretization. Rockstuhl et al.\ used a 2D geometry (i
 were not able to replicate. Instead we are using experimental data for 4h-SiC that was provided to us 
 via private communications from the authors of Ellis et al.\cite{ellis2016}.  
 
-\subsubsection{Grid-independence study}
+\subsubsection{Grid-independence study}\label{sec:independence}
 
 We performed a grid-independence study on a SiC cube of side $L=535$ nm submerged in air, under a 
 constant electric field aligned with the $z$-axis (a similar setup to the square cylinder on Fig. 18 of 
@@ -48,7 +48,7 @@ Figure \ref{fig:cube535} shows the grid-independence study, using meshes with  1
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{cubeL535nm_15Kvs19K.pdf} 
-    \caption{Grid-independence study for a SiC cube of side $L=535 nm$ submerged in air under a constant 
+    \caption{Grid-independence study for a SiC cube of side $L=535$ nm submerged in air under a constant 
     electric field in the $z$-direction. The curves represent the extinction cross-section divided by $L^2$ 
     as a function of wavelength divided by $L$.}
     \label{fig:cube535}
@@ -72,9 +72,8 @@ Figure \ref{fig:rectangle_sketch} (B). Following a similar analysis, in Figure 1
 vector (illumination) along the short side of the geometry, which means that the electric field is parallel to the 
 long side of the rectangle, like in Figure \ref{fig:rectangle_sketch} (A). 
 
-Based on the results of our grid-independence study, we decided to use triangle densities in the order of $6$ to $9\times10^{-5}$
-to produce the meshes for the replication of figures 14a and 14b in the work of Rockstuhl et al.\ (case $a1=672$, $b=328$). For the third 
-dimension, we needed to choose a value that represents ``infinity.'' To achieve this, we studied the effects of 
+The constraints of mesh generation mean that we have only loose control on triangle density. Our meshes for the rectangular prism all have densities like in the coarse case of the grid-dependence study of section \ref{sec:independence}, or finer.
+For the third dimension, we needed to choose a value that represents ``infinity.'' To achieve this, we studied the effects of 
 elongating the cylinder to the third dimension. In Figure \ref{fig:ext_y_14}, we present the results for two different
 values of the length in the third dimension, $y=1344$ nm ($2\times a$) and $y=2688$ nm ($4\times a$). We see that as we make $y$ longer, the 
 intensity of some peaks decreases, due to the fact that some of the peaks are associated to this component. Therefore, 
