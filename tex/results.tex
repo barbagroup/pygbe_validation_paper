@@ -165,24 +165,23 @@ figure they show simulation results for the resonance spectral position of the l
 mode when having parallel polarization ($E^{\parallel}_{100}$), with an incidence angle of 22$^\circ$.
 We attempted to replicate this result since the gap between the pillars 
 is 5000 nm (10 times more than other results), diminishing the effects of coupling, which makes it 
-a good candidate to replicate using \pygbe.  
-
+a good candidate to replicate using \pygbe. Secondly, we will perform a second attempt of replication  
+for the results presented in Figure 2a, in which they present reflectance measurements across wave number
+for pillars with AR=4 for an angle of incidence of 22 degrees and incoming polarization parallel to the 
+length of the pillars. 
 
 \textbf{Difference between methods, mesh and dielectric data}
 
 \textit{methods}
-(I DID NOT MENTION ANYTHING RELATED TO WHAT THEY DO IN THE EXPERIMENTS, SHOULD WE INCLUDE THIS?)
 
-In Ellis et al. simulations they solve full Maxwell equations via the RF package of the finite
-element method software COMSOL. To represent the array of pillars and their interactions, they use
-periodic boundary conditions of one pillar over a portion of substrate, and use periodic boundary conditions on it.
-They present the reflectance as a function of the wave number. 
-As we mentioned before, we use the boundary element method in 
-the quasistatic approximation, which is suitable in these case since Ellis pillar's size is small 
-compared to the wavelength involved in the simulations (800-1000 cm$^-1$ which is 10000-12500 nm). We measure 
-extinction cross section, which will express as peaks instead of depressions (as seen in Ellis reflection plots)
-since you see maximum extinction when there is minimum reflection. The intensity of the peaks is not comparable, but we are 
-looking to match the wave number (variable of interest) at which these events happen. 
+In Ellis et al. they run experiments using reflectance spectroscopy and they compute the solution of
+Maxwell equations via the RF package of the finite element method software COMSOL. In their simulations 
+they use periodic boundary conditions of one pillar over a portion of substrate, to represent the array of 
+pillars and their interactions. 
+We use the boundary element method in the quasistatic approximation, which is suitable in these case 
+since the pillar's size is small compared to the wavelength involved in the simulations (800-1000 cm$^-1$ which is 10000-12500 nm). 
+We measure extinction cross section, which will express as peaks instead of depressions (as seen in Ellis reflection plots). 
+The intensity of the peaks is not comparable, but we are looking to match the wave number (variable of interest) at which these events happen. 
 
 \textit{mesh}
 For the case of aspect ratio $AR=4$ we count with a triangular surface mesh provided by the authors of 
