@@ -94,7 +94,7 @@ Still many questions remain answered both to understand the gaps left by existin
 
 Our research group has been developing PyGBe---pronounced \emph{pigb\={e}}---for several years. 
 It was first written for biomolecular-electrostatics calculations using a continuum model of proteins in water or an ionic solvent. 
-The computational model applies a boundary integral form of the governing Poisson-Boltzmann and Poisson equations, to obtain the electrostatic field and potential on the molecular surface. 
+The computational model applies a boundary integral form of the governing Poisson-Boltzmann and Poisson equations, to obtain the electrostatic potential and its normal derivative on the molecular surface. 
 In the implicit-solvent model, this information is used to compute the quantity of interest: solvation energy, which is diagnostic for questions of protein binding affinity, protein-surface interactions, and others. 
 Biomolecules are modeled as dielectric cavities inside an infinite continuum solvent, and the partial differential equations are solved via a boundary element method, leading to a dense linear system of equations. 
 PyGBe uses a fast-summation algorithm via a Barnes-Hut treecode \cite{BarnesHut1986}, and accelerates the computationally intensive parts of the code on Nvidia GPU hardware using CUDA kernels in the treecode, interfacing with PyCUDA \cite{klockner2012pycuda}. 
