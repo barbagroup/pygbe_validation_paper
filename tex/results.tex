@@ -53,22 +53,23 @@ triangles: the computed results show no discernible difference.
     \label{fig:cube535}
  \end{figure}
 
-It is worth noting that the extinction cross section curve in Figure \ref{fig:cube535} has extra peaks 
-compared to the results of Figure 18 on Rockstuhl, this is due to the 3D nature of our case and the sharp 
-edges, being the latest an effect also mentioned in Rockstuhl et al. results. The 3D effect will be approach
-in the following results where we attempt a replication of one of teh results of Figure 14 of Rockstuhl work. 
+It is worth noting that the extinction cross-section curve in Figure \ref{fig:cube535} has extra peaks 
+compared to the results of Figure 18 of Rockstuhl et al., due to the three-dimensional effects captured in our simulation and the sharp 
+edges, the latter effect also being mentioned by Rockstuhl et al. The 3D effects will be approached
+in the following results, where we attempt a replication of one of the results on Figure 14 of Rockstuhl et al. 
 
-\subsubsection{Replication of Figure 14 (case a1) of Rockstuhl 2005}
+\subsubsection{Replication of Figure 14 (case a1) of Rockstuhl et al., 2005}
 
-We chose to replicate the result of Rocksuthl et al. presented in Figure 14. In particular the case where $a=672$ nm 
-and $b=328$ nm, since these dimension comply well with the requirements of the quasistatic approximation needed 
-to use \pygbe. In Rcokstuhl et al. work they present the normalized scattering cross section of a SiC rectangular 
-cylinder, and they perform simulation for two different setups (see Figure \ref{fig:rectangle_sketch}). In 
-Rockstuhl Figure 14 (left) they have the wave vector (illumination) along the long 
-side of the geometry, which means that the electric field is parallel to the short side of the rectangle (like in 
-Figure \ref{fig:rectangle_sketch} (B)). Following, a similar analysis Rockstuhl Figure 14 (right) they have the wave 
+We chose to replicate a result of Rocksuthl et al.\ presented in Figure 14: 
+the case where $a=672$ nm 
+and $b=328$ nm, since these dimensions are well within the limits of the quasistatic approximation 
+used in \pygbe. Rockstuhl et al.\ present the normalized scattering cross-section of a SiC rectangular 
+cylinder, and they perform simulations for two different setups, sketched in Figure \ref{fig:rectangle_sketch}. In 
+their Figure 14 (left), they have the wave vector (illumination) along the long 
+side of the geometry, which means that the electric field is parallel to the short side of the rectangle, like in 
+Figure \ref{fig:rectangle_sketch} (B). Following a similar analysis, in Figure 14 (right) of Rockstuhl et al., they have the wave 
 vector (illumination) along the short side of the geometry, which means that the electric field is parallel to the 
-long side of the rectangle (like in Figure \ref{fig:rectangle_sketch} (A). 
+long side of the rectangle, like in Figure \ref{fig:rectangle_sketch} (A). 
 
 Based on the results of the grid independence study we decided to use the densities in the order of $6-9e^-5$
 to produce the meshes for the replication of figures 14a and 14b on Rockstuhl's work (case a1=672, b=328). For the third 
