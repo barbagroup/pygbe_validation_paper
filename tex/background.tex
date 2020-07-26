@@ -23,6 +23,7 @@ must address uncertainties that arise from both simulation results and experimen
 
 \end{compactitem}
 
+\noindent
 The process of \emph{verification} establishes that a computational model correctly describes the intended mathematical equations and their solutions.
 It encompasses both code correctness, and solution accuracy.
 \emph{Validation}, on the other hand, seeks to determine to which measure a computational model represents the physical world. 
@@ -75,6 +76,7 @@ In addition to lack of access to non-public data and code, the NASEM report (of 
 
 \end{compactitem}
 
+\noindent
 Improving computational reproducibility hinges on capturing and sharing information about the computational environment and steps required to collect, process, and analyze data.
 Scientific workflows represent a complex flow of data products through various steps of collection, transformation, and analysis to produce an interpretable result. 
 Capturing provenance of the result is increasingly difficult to do using manual processes, and automation is key. 
@@ -83,7 +85,20 @@ This creates a history of changes and allows the developers to better understand
 Recent technological advances in version control, virtualization, computational notebooks, and automatic provenance tracking have the potential to simplify reproducibility, and tools have been developed that leverage these technologies.
 Still, many questions remain unanswered both to understand the gaps left by existing tools and to develop principled approaches that fill those gaps. 
 
+Replication of scientific findings is key for building trust in them. 
+It is often difficult to attain, for many reasons, not least because deciding when two scientific findings are \emph{consistent} is tangled in researcher judgements and inevitable constraints. 
+The NASEM report lists the following factors affecting the replicability of findings: 
 
+\begin{compactitem}
+
+\item[$\triangleright$] the complexity of the system under study;\item[$\triangleright$] understanding of the number and relations among variables within the system under study;\item[$\triangleright$] the ability to control the variables; \item[$\triangleright$] levels of noise within the system (or signal to noise ratios);\item[$\triangleright$] the mismatch of scale of the phenomena and the scale at which it can be measured; \item[$\triangleright$] stability across time and space of the underlying principles; \item[$\triangleright$] fidelity of the available measures to the underlying system under study (e.g., direct  or indirect measurements); and\item[$\triangleright$] prior probability (pre-experimental plausibility) of the scientific hypothesis.
+
+\end{compactitem}
+
+\noindent
+Fields of study that have been at the center of the `replication crisis` commotion tend to be characterized by their complexity, intrinsic variability, or inability to control variables, e.g., psychology. 
+But in many areas of modern technology we face similar challenges to control variables or disentangle many interacting effects. 
+In this paper, we tackle replication and validation of computational models in nanoscale physics, where certainly the systems are complex, variables difficult to control, and signals subject to noise.
 
 \subsection{Description of the PyGBe software}
 
