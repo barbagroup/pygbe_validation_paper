@@ -168,7 +168,7 @@ is 5000 nm (10 times more than other results), diminishing the effects of coupli
 a good candidate to replicate using \pygbe. Secondly, we will perform a second attempt of replication  
 for the results presented in Figure 2a, in which they present reflectance measurements across wave number
 for pillars with AR=4 for an angle of incidence of 22 degrees and incoming polarization parallel to the 
-length of the pillars. 
+length of the pillars. This same case, counts with experimental results that we will use to attempt the validation of our solver. 
 
 \textbf{Difference between methods, mesh and dielectric data}
 
@@ -184,15 +184,16 @@ We measure extinction cross section, which will express as peaks instead of depr
 The intensity of the peaks is not comparable, but we are looking to match the wave number (variable of interest) at which these events happen. 
 
 \textit{mesh}
-For the case of aspect ratio $AR=4$ we count with a triangular surface mesh provided by the authors of 
-Ellis et al. Which is a non-uniform mesh of
-approximately four thousand elements. To produce the remaining 
-meshes, we use our python script to generate a uniform mesh and round the edges using Trimesh. 
-After doing certain refinement studies we noticed that to achieve close results to the original mesh, using a
-uniform mesh, we needed approximately double the density (I HAVE SOME PLOTS ON THIS RESULTS BUT 
-I'M NOT SURE IF WE WANT TO PUT THEM).
-To replicate the results of figure S4 on their supplementary material, we use uniform meshes. While for the 
-replication of figure 2a and the validation result we used the mesh provided by the authors of Ellis et al. 
+
+For the case of aspect ratio $AR=4$ we count with a non-uniform triangular surface mesh (N=4398) provided by the authors of 
+Ellis et al, which we use for validation and replication of FIgure 2a of their paper. However, for the replication
+of Figure S4 of the supplementary material we needed the remaining aspect ratio meshes. We generated uniform meshes using our
+python script, and we determined the density of these meshes by comparing the extinction cross section for the case of AR=4 of 
+our mesh and the one provided by Ellis et al. We noticed that using around double the elements (N=8564) than in the original mesh and 
+rounding the edges, the relative errors for the extinction cross section where, on average, smaller than 3$\%$ and the variation on the wavelength peak
+occurrence was smaller than 1 cm$^-1$. This analysis lead us to a mesh density of $\approx \; 1.7 \times10^{-5}$ to create the meshes for 
+the aspect ratio's variation study.
+
 
 
 \textit{dielectric data}
