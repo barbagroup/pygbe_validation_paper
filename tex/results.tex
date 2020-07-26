@@ -195,22 +195,29 @@ occurrence was smaller than 1 cm$^-1$. This analysis lead us to a mesh density o
 the aspect ratio's variation study.
 
 
-
 \textit{dielectric data}
 The dielectric data for the simulations, was given by the authors of the paper via a private communication, 
 and corresponds to experimental values of the dielectric. 
 
-To be able to replicate the result of Figure S4 of the suplementary material of Ellis et al, we
+\subsubsection{Replication of Figure S4 of supplementary material of Ellis et al. 2016}
+
+To be able to replicate the result of Figure S4 of the supplementary material of Ellis et al, we
 need to identify the lower frequency mode for each of
 the aspect ratios in our computations. For each aspect ratio (AR) 
 value from 1 to 7 we computed the extinction cross section $C_{ext}$ across the wave number in the range
-800-1000 $cm^{-1}$. We identify the lower frequency mode ($E^{\parallel}_{100}$ in Ellis paper)  that is not a 
-longitudinal mode (mode related to the hight of the pillar, only visible when the incidence of the 
-electric field is not normal). We can identify the longitudinal modes by comparing normal vs 22 degrees 
-angle of incidence runs (see Figure \ref{fig:ellis_ang_inc}). As we mentioned the longitudinal modes, due to its nature, do not appear when we 
-have the normal incidence . Then, on the 22 degree incidence computations we choose the lower wave number mode
-that it's not a longitudinal mode. 
+800-1000 $cm^{-1}$. We identify the lower frequency mode ($E^{\parallel}_{100}$ in Ellis paper) that is not a 
+longitudinal mode. The longitudinal mode appear only when we have an incidence angle that is off-normal, since 
+they are associated with the height of the pillar. Figure \ref{fig:AR_22_vs_norm} show the results of the extinction 
+cross section of a SiC pillar of fixed height ($H=950$ nm), fixed width ($W=400$) and varied length ($L=400-2800$ nm), for normal 
+and 22 degrees angle of incidence. The simulations where performed 
+for the Long Edge orientation, meaning that the electric field is aligned with the length pillar 
+when having normal incidence as shown on see Figure \ref{fig:ellis_ang_inc}. From these results we select 
+the lower mode that it is not a longitudinal one and extract its wavelength (see \ref{tab:ar_peaks}) to replicate 
+\ref{fig:rep_FS4_ellis}. Figure \ref{fig:rep_FS4_ellis} shows the results from  Ellis et al (digitized using the WebPlotDigitizer) and the results obtained
+with \pygbe, and Table \ref{tab:err_AR} shows that the percentage error is below 2$\%$ for all
+the cases.
 
+ 
 Note: Ellis et al., changes the angle of incidence of the illuminating vector while in \pygbe we achieve this by
 rotating the geometry instead. 
 
@@ -221,14 +228,6 @@ rotating the geometry instead.
     \label{fig:ellis_ang_inc}
  \end{figure}
 
-Figure \ref{fig:AR_22_vs_norm} show the results of the extinction cross section of a SiC pillar of fixed
-height ($H=950$ nm), fixed width ($W=400$) and varied length ($L=400-2800$ nm). The simulations where performed 
-performed for the Long Edge orientation, meaning that the electric field is aligned with the length pillar 
-when having normal incidence (see Figure \ref{fig:ellis_ang_inc}). 
-
-In Figure \ref{fig:AR_22_vs_norm} and Table \ref{tab:ar_peaks} we show the resonance peaks and
-their corresponding wavelengths. In the table we mark in bold the peaks which correspond to 
-the $E^{\parallel}_{100}$ mode. 
 
 \begin{figure}
     \centering
@@ -274,13 +273,6 @@ the $E^{\parallel}_{100}$ mode.
     \end{center}
   \end{table}
 
-Once we identify the proper modes, we proceed to the replication of Figure S4 on the 
-supplementary material of Ellis et al work. It is worth mentioning that we limit ourselves to
-the replication of the black curve in their plot, since in this case the pillars are separated 
-by 5000 nm which means the coupling effects are negligible. Figure \ref{fig:rep_FS4_ellis} shows
-the results from  Ellis et al (digitized using the WebPlotDigitizer) and the results obtained
-with \pygbe, and Table \ref{tab:err_AR} shows that the percentage error is below 2$\%$ for all
-the cases
 
 
 \begin{figure}
@@ -310,7 +302,7 @@ the cases
     \end{tabular}
 \end{table}
 
-\subsubsection{Validation of \pygbe against Fig 2a experimental results}
+\subsubsection{Validation of \pygbe against Fig 2a experimental results, and replication of corresponfding computations}
 
 For the case of aspect ratio four (AR=4) we obtain the smallest error using the uniform
 mesh. Since we count with the mesh provided by the authors, and knowing that our computation 
