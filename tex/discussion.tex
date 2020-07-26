@@ -10,7 +10,7 @@ They present their results as a plot (Figure 14 in their paper), and report the 
 Lacking access to the secondary data behind the plots---computed from two-dimensional simulations with a boundary element solver---we were forced to manually digitize the values from the figure.
 Our results are presented in Figure \ref{fig:rep_14}, together with the curve we obtain from digitizing the source image. 
 We were successful at replicating the strong peaks reported  by Rockstuhl et al.\ at wavelengths
-10.42 $\mu$m and 10.7 $\mu$ m,  when the electric field $E$ is parallel to short side of the rectangle, and 10.42 $\mu$m and 10.82 $\mu$ m
+10.42 $\mu$m and 10.7 $\mu$ m,  when the electric field $E$ is parallel to the short side of the rectangle, and 10.42 $\mu$m and 10.82 $\mu$ m
 when $E$ is parallel to the long side. Our results contain extra (small) peaks that are not present in the work of Rockstul et al.
 The first one, located between the main two peaks, we attribute to the the effect of
 sharp edges (see Figure \ref{fig:tri_reg_round_14}), as when we introduce a level of roundness, it diminishes. The second extra peak is the far right one, and we believe this
@@ -23,6 +23,13 @@ Their results in Figure 2 include experiments and simulations with the commercia
 Again, we lack access to the data behind the plots, and we had to digitize the curves by hand. 
 The quantity plotted in the original figures is reflectance as a function of wavenumber, whereas we compute the extinction---on the figures, they show inverted peaks, where we show positive peaks.
 We can compare the results, nevertheless, because the quantity of interest is the wavenumber position of the peaks.
+Figure \ref{fig:pygbe_vs_exp_2a} shows the results of our simulations using \pygbe on an isolated pillar,
+compared with the experimental results of Ellis et al.\ on an array of pillars.
+The results with \pygbe  do not account for the effect of coupling among the pillars, which explains the noticeable discrepancy on the wave numbers at which the peaks occur. 
+We proposed a correction, based on the results reported on Figure S4 of Ellis et al.\ for the $AR=4$ case, where the shift on the wave number due to coupling is 12.17 cm$^{-1}$ (this value was obtained from digitized data). 
+We subtract this value to that obtained with our simulations and we show the comparison of our corrected results against those of Ellis et al.: the experimental data on Figure \ref{fig:val_2a}, and the
+computational data on Figure \ref{fig:rep_2a}. 
+With this correction, we observe a good match of the wavenumber for the lower (and stronger) mode, while for the remaining modes a difference remains.
 
 Challenges: all what's on the replication list that should go in the background 
 
