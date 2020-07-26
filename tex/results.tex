@@ -161,8 +161,9 @@ material, corresponding to the black curve on their plot. In this
 figure, they show simulation results for the resonance spectral position of the lower-frequency 
 mode when having parallel polarization ($E^{\parallel}_{100}$), with an incidence angle of 22$^\circ$.
 We attempted to replicate this result since the gap between the pillars 
-is 5000 nm (10 times more than other results), diminishing the effects of coupling, which makes it 
-a good candidate to replicate using \pygbe. [SAY WHY]
+is 5000 nm (10 times larger than in the other cases), diminishing the effects of coupling, which makes it 
+a better candidate to replicate using \pygbe. 
+In our calculations, the setup consists of a single pillar, with no substrate.
 Our second attempted replication is  
 for the results presented in Figure 2a, corresponding to reflectance measurements across wave number
 for pillars with aspect ratio $AR=4$, angle of incidence of 22 degrees, and incoming polarization parallel to the 
@@ -177,7 +178,8 @@ In their simulations,
 they used one pillar over a portion of substrate, with periodic boundary conditions to represent an array of 
 pillars and their interactions. 
 We use the boundary element method in the quasistatic approximation, which is suitable in this case 
-since the pillar's size is small compared to the wavelength involved in the simulations (800--1000 cm$^{-1}$, which is 10000--12500 nm). 
+since the pillar's size is small compared to the wavelengths involved in the simulations: 
+which are in the range 10000--12500 nm. 
 We measure extinction cross section, which will express as peaks instead of depressions (shown in the reflection plots of Ellis et al.). 
 The intensity of the peaks is not comparable, but we are looking to match the wave number (quantity of interest) at which these events happen. 
 
