@@ -304,11 +304,11 @@ rotating the geometry instead.
 
 \subsubsection{Validation of \pygbe against Fig 2a experimental results, and replication of corresponfding computations}
 
-For the case of aspect ratio four (AR=4) we obtain the smallest error using the uniform
-mesh. Since we count with the mesh provided by the authors, and knowing that our computation 
-for the mode $E^{\parallel}_{100}$ compares well with their computations, we attempted to 
-validate our simulations with their experimental results (red curve on paper), as well 
-as to replicate their simulations (green curve on paper) on Figure 2a of their paper.
+The results of Figure 2a on Ellis et al. were obtained on a pillar of aspect ratio $AR=4$. For this case,
+we count with the mesh provided by the authors. We also know that our computation 
+for the mode $E^{\parallel}_{100}$ compares well with theirs (percentage error 0.16$\%$), therefore we
+attempted to validate our simulations with their experimental results (red curve on paper), as well 
+as to replicate their simulations (green curve on paper).
 Figure 2a of Ellis et al, presents measured and simulated reflectance of SiC pillar
 arrays with a 500 nm gap. All their measurements and simulations were performed with 
 22$^\circ$ off-normal angle of incidence and incoming polarization parallel to the 
@@ -316,8 +316,8 @@ elongated size of the pillar.
 
 Using \pygbe we compute the extinction cross section of an isolated SiC pillar (AR=4)
 with no substrate, submerged in air under a constant electric field in the z-direction, 
-and rotate the orientation of the pillar to match the angle of incidence (see Figure \ref{fig:ellis_ang_inc}).
-In Figure \ref{fig:pygbe_vs_exp_2a} we present 
+and rotated the orientation of the pillar to match the angle of incidence used on Ellis et al. (see Figure \ref{fig:ellis_ang_inc}).
+In Figure \ref{fig:pygbe_vs_exp_2a} we present a 
 comparison of our simulations and the experimental results from Ellis et al. There is a 
 difference in the peaks wavelength that is noticeable. This could be attributed to the
 fact that in their experiments the separation between pillars is of 500 nm, which implies
@@ -336,14 +336,14 @@ there are coupling effects that in our simulations are not contemplated.
 Since our simulations do not count for coupling effects, we can not strictly imitate 
 the conditions to validate our solver. However, from Figure S4 on the supplementary 
 material of Ellis et al, we know that coupling effects affect the $E^{\parallel}_{100}$ 
-mode by a shift of 12.17 cm$^-1$. Therefore as a \textit{first order correction} we can 
+mode by a shift of 12.17 cm$^-1$. Therefore, as a \textit{first order correction} we can 
 subtract this value from our simulations to count for coupling effects. In Figure 
 \ref{fig:val_2a} we present the result after applying the correction for coupling effects.
 It is worth mentioning that the far left (837 cm$^-1$) and far right (964 cm$^-1$) peaks 
 on Ellis results, are peaks associated with zone-folded LO (longitudinal) phonons, in 
 particular P1 (837 cm$^-1$) is not infrared active \cite{ellis2016}. Ellis and coworkers, 
-do not discuss this result into detail, but they concentrate their analysis on the peaks
-that happen between 864–961 cm$^-1$ 
+do not discuss this result into detail, but they explain that these peaks go beyond the scope of the work, 
+they concentrate their analysis on the peaks that happen between 864–961 cm$^-1$ 
 
 \begin{figure}
     \centering
