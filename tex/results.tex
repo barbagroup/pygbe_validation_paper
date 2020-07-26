@@ -4,17 +4,14 @@
 
 %%% Rockstuhl work summary%%%%
 The work of Rockstuhl et al.\cite{rockstuhl2005} studies the phonon-polariton response of silicon carbide (SiC)
-nanoparticles using the boundary element method. They analyze different ``cylindrical particles''
-made of 6H-SiC, as a function of geometrical cross-section. 
-They use a two-dimensional (2D) boundary element method 
-previously developed by the group \cite{rockstuhl2003}, where they extend in the third dimension to infinity
-(hence the name ``cylinder'').
+nanoparticles using a two-dimensional (2D) boundary element method, 
+previously developed in their group \cite{rockstuhl2003}. 
+They analyzed ``cylindrical particles'' (where they extend in the third dimension to infinity) made of 6H-SiC, with varying cross-sections.
 %%% Rockstuhl work summary%%%%
-
-We decided to attempt to replicate one of the results presented on Fig.14 of their paper \cite{rockstuhl2005}:
+We decided to attempt to replicate one of the results presented on Fig.14 of their paper:
 the scattering cross-section of a SiC rectangular cylinder for three different aspect ratios. 
-To comply with our quasistatic approach ($\lambda > d$ where $d$ is the characteristic
-dimension of the geometry), we chose the particular case where a=672 nm and b=328 nm.
+To be well within our quasistatic approach ($\lambda > d$ where $d$ is the characteristic
+dimension of the geometry), we chose the case with $a=672$ nm, $b=328$ nm.
 
 \subsubsection{Differences in method, mesh and dielectric data}
 
@@ -110,7 +107,7 @@ of rounding the edges---Rockstuhl et al.\ mentioned rounded edges
 as a factor that introduces extra peaks on the response. We were unable to control the 
 roundness as a function of arc of curvature or the dimensions of the rectangular prism, so we 
 decided to use the default settings on Trimesh. 
-(For reproducibility purposes, we provide all the mesh files, as described in sub-section \ref{sec:reprod})
+For reproducibility purposes, we provide all the mesh files, as described in sub-section \ref{sec:reprod}.
 Figure \ref{fig:tri_reg_round_14} shows the 
 results of the effect of uniformity and roundness. One can see that the second peak is not
 present in the green curve, which can be attributed to the effect of the roundness. This is 
@@ -129,7 +126,7 @@ consistent with the results in Rockstuhl et al.
 
 Once we have found the ``best'' possible geometry construction, we show how our results 
 (green curve in Figure \ref{fig:tri_reg_round_14}) compare 
-with the original results from Rockstuhl's Figure 14. We have obtained Rockstuhl's curves by using 
+with the original results from Rockstuhl's Figure 14. We obtained data from Rockstuhl's curves by using 
 the WebPlotDigitizer (\url{https://apps.automeris.io/wpd/}). The replication results are 
 presented in Figure \ref{fig:rep_14}: the main peaks presented in Rockstuhl et al.\ are 
 successfully replicated. While we still have the presence of a third peak in our results, we conjecture 
@@ -365,3 +362,19 @@ Figure 2 of their paper (green curve) we get (see Figure \ref{fig:rep_2a})
  
  
  \subsection{Reproducibility and data management} \label{sec:reprod}
+ 
+ Barba (2019) describes the elements of reproducible computational research that we have adopted in our practice \cite{barba2019praxis}. 
+ A key element is professional software management and engineering, and the central technology solution is version control. 
+ Preserving a complete history of changes is the only way to manage complex software projects that can support reproducibility.
+ Another key element of transparent and reproducible computational modeling is \emph{automation}.
+Automating every step means \emph{turning protocols into code.}
+For example, simulations are launched with parameters fed from a configuration file rather than an interactive prompt, and all figures and plots are produced by writing scripts, rather than pointing-and-clicking on a graphical interface. 
+The goal is to create complete ``recipes'' in code, which can be run, versioned, and shared. 
+
+Our signature reproducibility practice is to organize and share in an archival-quality repository (providing a global identifier) all digital artifacts associated with the results in the paper. 
+This includes input files, configuration files, post-processing scripts, files specifying the build process and containerization (e.g., Docker files), and even cloud computing machine definitions, if applicable \cite{mesnard-barba2019}.
+We call these openly shared file sets \emph{reproducibility packages}, or repro-packs for short.
+As in our previous papers, it is possible to reproduce all the figures in this paper using the repro-packs shared in the manuscript GitHub repository, and archived separately in Figshare and Zenodo.
+[LIST, EXPLAIN, CITE ARCHIVES] 
+\pygbe is openly developed and shared under the BSD3-clause license via its repository at \url{https://github.com/barbagroup/pygbe}.
+

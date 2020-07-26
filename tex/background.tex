@@ -12,7 +12,7 @@ V\&V 70 is the latest, focused on machine-learning models.
 The key principles laid out in the first V\&V standard persevere through the many subsequent efforts that have operated to this day. 
 They are:
 
-\begin{enumerate}
+\begin{compactitem}
 
 \item[$\triangleright$] Verification must precede validation.
 \item[$\triangleright$] The need for validation experiments and the associated accuracy requirements for computational model predictions are based on the intended use of the model.
@@ -21,8 +21,9 @@ They are:
 \item[$\triangleright$] Validation must assess the predictive capability of the model in the physical realm of interest, and it
 must address uncertainties that arise from both simulation results and experimental data.
 
-\end{enumerate}
+\end{compactitem}
 
+\noindent
 The process of \emph{verification} establishes that a computational model correctly describes the intended mathematical equations and their solutions.
 It encompasses both code correctness, and solution accuracy.
 \emph{Validation}, on the other hand, seeks to determine to which measure a computational model represents the physical world. 
@@ -51,7 +52,7 @@ The National Academies of Science, Engineering and Medicine (NASEM) released in 
 Replicability is obtaining consistent measurements or results, or drawing consistent conclusions using new data, methods, or conditions, in a study aimed at the same scientific question.''
 According to these definitions, reproducibility demands full transparency of the computational workflow, which at the very least means open code and open data, where `open` means shared at time of publication (or earlier) under a standard public license. 
 This condition is infrequently satisfied.
-The NASEM report describes how a number of systematic efforts to reproduce computational results have failed in more than half of the attempts made, mainly due to insufficient detail on digital artifacts, such as data, code and computational workflow \cite{moraila-etal-2014,iqbal-etal-2016,chang-li2018,stodden-etal-2018}. 
+The NASEM report describes how a number of systematic efforts to reproduce computational results have failed in more than half of the attempts made, mainly due to inadequately specified or unavailable data, code and computational workflow \cite{moraila-etal-2014,iqbal-etal-2016,chang-li2018,stodden-etal-2018}. 
 Recommendation 4-1 of the NASEM report states that 
 ``to help ensure reproducibility of computational results, researchers should convey clear, specific, and complete information about any computational methods and data products that support their published results in order to enable other researchers to repeat the analysis, unless such information is restricted by nonpublic data policies. That information should include the data, study methods, and computational environment'' \cite{NASEM2019}.
 
@@ -61,34 +62,43 @@ In some research settings, it may make sense to relax the requirement of bitwise
 This can only be decided, however, after fully understanding the numerical-analysis issues affecting the outcomes---and the risk associated with an uncertainty range. 
 Researchers using high-performance computing thus recognize that when different runs with the same input data produce slightly different numeric outputs, each of these results is equally credible, and the output must be understood as an approximation to the correct value within a certain accepted uncertainty.
 
-Beyond the particulars of high-performance or parallel computing, what makes reproducibility so difficult to achieve? 
-A number of factors can contribute to the lack of reproducibility in research. 
-In addition to lack of access to non-public data and code, the NASEM report lists the following contributors to lack of reproducibility:
+Beyond the particulars of high-performance or parallel computing, 
+a number of factors can contribute to the lack of reproducibility in research. 
+In addition to lack of access to non-public data and code, the NASEM report (of which Barba is a co-author) lists the following contributors to lack of reproducibility:
 
-\begin{enumerate}
+\begin{compactitem}
 
-\item[$\triangleright$] Inadequate record-keeping: the original researchers did not properly record the relevant digital artifacts such as protocols or steps followed to obtain the results, the details of the computational environment and software dependencies, and/or information on the archival of all necessary data.
-\item[$\triangleright$]  Non-transparent reporting: the original researchers did not transparently report and provide open access to or archive the relevant digital artifacts necessary for reproducibility.
+\item[$\triangleright$] Inadequate record-keeping: the researchers did not properly document all relevant digital artifacts and steps followed to obtain the results, the details of the computational environment, software dependencies, and/or identifiers and metadata for data products.
+\item[$\triangleright$]  Lack of transparency: the researchers did not transparently report, using standard public licenses, an archive with all relevant digital artifacts necessary to reproduce the results.
 \item[$\triangleright$]  Obsolescence of the digital artifacts: over time, the digital artifacts in the research compendium are compromised because of technological breakdown and evolution or lack of continued curation.
 \item[$\triangleright$]  Flawed attempts to reproduce others' research: the researchers who attempted to reproduce the work lacked expertise or failed to correctly follow the research protocols.
-\item[$\triangleright$]  Barriers in the culture of research: lack of resources and incentives to adopt computationally reproducible and transparent research across fields and researchers.
+\item[$\triangleright$]  Barriers in the culture of research: lack of resources and incentives to adopt reproducible and transparent research across fields and researchers.
 
-\end{enumerate}
+\end{compactitem}
 
+\noindent
 Improving computational reproducibility hinges on capturing and sharing information about the computational environment and steps required to collect, process, and analyze data.
 Scientific workflows represent a complex flow of data products through various steps of collection, transformation, and analysis to produce an interpretable result. 
-Capturing provenance of the result is increasingly difficult to do using manual processes. 
-Thus, to support computational reproducibility, efforts have been under way for several years to develop workflow-management systems that capture and store data and workflow provenance automatically. 
-With such systems, results can be reliably linked to the computational process that derived them, and computational tasks can be automated, allowing them to be rerun and shared.
+Capturing provenance of the result is increasingly difficult to do using manual processes, and automation is key. 
 With regards to software management, version-control systems are used to automatically capture the history of all changes made to the source code of a computer program. 
 This creates a history of changes and allows the developers to better understand the code and to identify possible problems or errors.
-Recently, the concept of version control has been extended to data files. 
-These files are generally too large to be stored in standard version-control systems, and they are often in a binary format that cannot be versioned. 
-Rather, data version control excludes the large data files from the main versioned repository, automatically collects data provenance, records data processing steps into a (reproducible) pipeline, and connects with cloud services where large data files are stored.
 Recent technological advances in version control, virtualization, computational notebooks, and automatic provenance tracking have the potential to simplify reproducibility, and tools have been developed that leverage these technologies.
-Still many questions remain answered both to understand the gaps left by existing tools and to develop principled approaches that fill those gaps. 
+Still, many questions remain unanswered both to understand the gaps left by existing tools and to develop principled approaches that fill those gaps. 
 
+Replication of scientific findings is key for building trust in them. 
+It is often difficult to attain, for many reasons, not least because deciding when two scientific findings are \emph{consistent} is tangled in researcher judgements and inevitable constraints. 
+The NASEM report lists the following factors affecting the replicability of findings: 
 
+\begin{compactitem}
+
+\item[$\triangleright$] the complexity of the system under study;\item[$\triangleright$] understanding of the number and relations among variables within the system under study;\item[$\triangleright$] the ability to control the variables; \item[$\triangleright$] levels of noise within the system (or signal to noise ratios);\item[$\triangleright$] the mismatch of scale of the phenomena and the scale at which it can be measured; \item[$\triangleright$] stability across time and space of the underlying principles; \item[$\triangleright$] fidelity of the available measures to the underlying system under study (e.g., direct  or indirect measurements); and\item[$\triangleright$] prior probability (pre-experimental plausibility) of the scientific hypothesis.
+
+\end{compactitem}
+
+\noindent
+Fields of study that have been at the center of the `replication crisis` commotion tend to be characterized by their complexity, intrinsic variability, or inability to control variables, e.g., psychology. 
+But in many areas of modern technology we face similar challenges to control variables or disentangle many interacting effects. 
+In this paper, we tackle replication and validation of computational models in nanoscale physics, where certainly the systems are complex, variables difficult to control, and signals subject to noise.
 
 \subsection{Description of the PyGBe software}
 
@@ -122,13 +132,13 @@ Nevertheless, the gold standard of confidence in the predictive capability of th
 
 \subsection{Physics context for this work}
 
-In recent years, polar dielectrics such as Silicon Carbide (SiC) have caught the attention of researchers as an alternative to plasmonic metals, 
-due to their low optical losses in in the mid- to long-wave infrared range. 
+In recent years, polar dielectric crystals such as Silicon Carbide (SiC) became recognized as an alternative to plasmonic metals in many technologies, including biosensors. 
+They manifest oscillations of lattice-bound charges, called surface phonon polaritons, in the mid- to long-wave infrared range with low optical losses.
 Nanostructures made of these materials offer sensing capabilities, described by their \emph{figure of merits}, that are unattainable with plasmonic metals. 
 The figure of merits of a nanoparticle is defined as the ratio between the sensitivity and the width of the resonance peak at mid-height \cite{otte-etal-2012}. 
 In turn, sensitivity is the shift in the resonance position divided by the change in the refractive index: 
 $S = \Delta \lambda / \Delta n$.
-The dielectric of these materials has a negative real part and a very small imaginary part, in the mid/long infrared region. 
+The dielectric function of polar dielectrics has a negative real part and a small imaginary part, in the mid to long infrared regime. 
 This dielectric behavior is similar to that observed in metals like silver in the blue part of the wavelength spectrum. 
 In plasmonics, when illuminating a small particle made of metallic materials, we will observe that certain wavelengths excite a surface plasmon. 
 The main difference with polar dielectrics like SiC is that for this material the frequency of the incoming light matches instead the resonance frequency of the Si and C sub-lattices \cite{caldwell2015,rockstuhl2005}. 
@@ -136,7 +146,7 @@ This excitation leads to a strong extinction cross-section at the resonance wave
 These behaviors can be modeled with the same approaches used for localized surface plasmon resonance, and when the wavelength is much larger than the size
 of the nanoparticle, we can again apply the electrostatic approach implemented in \pygbe \cite{ClementiETal2017, ClementiETal2019}.
 
-When studying both surface phonon polaritons and surface plasmon resonances, we can analyze the spectrums by measuring different quantities. 
+When studying both surface phonon polaritons and surface plasmon resonances, one can analyze the spectrums by measuring different quantities. 
 We can measure scattering cross-section, extinction cross-section (scattering plus absorption), as well as reflection. 
 These different approaches are comparable since the \textit{quantity of interest} is the wavelength (frequency) at which the resonance modes happen. 
 Whether we measure reflection or extinction cross-section, the wavelength (frequency) at which the peaks happen remains the same. 
