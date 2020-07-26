@@ -20,7 +20,7 @@ The quantity of interest in these findings is the wavelength of the resonance pe
 
 The second replication case come from a paper by Ellis and co-workers \cite{ellis2016} studying the effect of aspect ratio on the excitation of high-order modes in localized surface phonon-polariton nanostructures (Figure S4 of their supplementary material).
 Figure \ref{fig:rep_FS4_ellis} shows the results for this replication, where the relative errors between our computations and theirs is always smaller than 2$\%$. Having the smallest error for the case of $AR=4$ we proceed to study the results on Figure 2 of their work, which corresponds to teh same aspect ratio.
-Their results in Figure 2 include experiments and simulations with the commercial software COMSOL, so we sought to both validate \pygbe using their experimental results, and replicate their computational findings. 
+Their results in Figure 2a include experiments and simulations with the commercial software COMSOL, so we sought to both validate \pygbe using their experimental results, and replicate their computational findings. 
 Again, we lack access to the data behind the plots, and we had to digitize the curves by hand. 
 The quantity plotted in the original figures is reflectance as a function of wavenumber, whereas we compute the extinction---on the figures, they show inverted peaks, where we show positive peaks.
 We can compare the results, nevertheless, because the quantity of interest is the wavenumber position of the peaks.
@@ -33,9 +33,9 @@ computational data on Figure \ref{fig:rep_2a}.
 When comparing with their experiments, once applied the correction, we observe a good match of the wavenumber for the lower (and stronger) mode, as well as a good match for the 
 third and fourth peaks. The wave number of the second peak, related to a longitudinal excitation (mode $L_{000}$ on Ellis et al.), presents a discrepancy that we believe it is related to the fact that our 
 pillar does not have a substrate underneath. The remaining (fifth) peak, also presents a discrepancy, but in this case we can not identify the reason.
-It is worth mentioning that we do not include in the analysis the far left and far right peaks seen in the experimental results, since Ellis et al. do not discuss their 
-presence in detail (NOT SURE HOW TO FULLY EXPLAIN THIS.)
-
+We did not analyze the peaks out of the range of 864-961 cm$^{-1}$, since Ellis et al. \ describe these peaks to be associated with zone-folded LO (longitudinal) phonons of 4H-SiC,
+what goes beyond the study of interest.
+After considering all this implications, we can say that we have validated our solver \pygbe against the experimental results of Figure 2a, as well as replicated their computations. 
 
 
 Challenges: all what's on the replication list that should go in the background 
