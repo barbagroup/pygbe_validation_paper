@@ -1,5 +1,8 @@
-# pygbe_validation_paper
-Paper on Validation for PyGBe and replication studies. 
+# Reproducible Validation and Replication Studies in Nanoscale Physics
+
+**Natalia C. Clementi, and Lorena A. Barba**
+
+Manuscript repository, including all source files for the text and reproducibility packages for all figures.
 
 
 ### LICENSE
