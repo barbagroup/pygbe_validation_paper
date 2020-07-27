@@ -18,42 +18,42 @@ peak is a consequence of the 3D nature of our geometry; as observed in Figure \r
 decreases as the third dimension of the geometry lengthens.
 The quantity of interest in these findings is the wavelength of the resonance peaks, and our results do indeed match the findings.
 
-The second replication case come from a paper by Ellis and co-workers \cite{ellis2016} studying the effect of aspect ratio on the excitation of high-order modes in localized surface phonon-polariton nanostructures (Figure S4 of their supplementary material).
-Figure \ref{fig:rep_FS4_ellis} shows the results for this replication, where the relative errors between our computations and theirs is always smaller than 2$\%$. Having the smallest error for the case of $AR=4$ we proceed to study the results on Figure 2 of their work, which corresponds to teh same aspect ratio.
-Their results in Figure 2a include experiments and simulations with the commercial software COMSOL, so we sought to both validate \pygbe using their experimental results, and replicate their computational findings. 
+The second replication case is from a paper by Ellis and co-workers \cite{ellis2016} studying the effect of aspect ratio on the excitation of high-order modes in localized surface phonon-polariton nanostructures (Figure S4 of their supplementary material and Figure 2 of their paper).
+Figure \ref{fig:rep_FS4_ellis} shows the results for this replication, where the relative errors between our computations and theirs is always smaller than 2$\%$. The smallest error is for the case with $AR=4$ and we proceeded to study the results on Figure 2 of their work, corresponding to this same aspect ratio.
+Their results in Figure 2a include both experiments and simulations with the commercial software COMSOL, so we sought to both validate \pygbe using their experimental results, and replicate their computational findings. 
 Again, we lack access to the data behind the plots, and we had to digitize the curves by hand. 
 The quantity plotted in the original figures is reflectance as a function of wavenumber, whereas we compute the extinction---on the figures, they show inverted peaks, where we show positive peaks.
 We can compare the results, nevertheless, because the quantity of interest is the wavenumber position of the peaks.
 Figure \ref{fig:pygbe_vs_exp_2a} shows the results of our simulations using \pygbe on an isolated pillar,
 compared with the experimental results of Ellis et al.\ on an array of pillars.
 The results with \pygbe  do not account for the effect of coupling among the pillars, which explains the noticeable discrepancy on the wave numbers at which the peaks occur. 
-We proposed a correction, based on the results reported on Figure S4 of Ellis et al.\ for the $AR=4$ case, where the shift on the wave number due to coupling is 12.17 cm$^{-1}$ (difference between black and red curve for AR=4 on figure S4 of supplementary material). 
-We subtract this value to that obtained with our simulations and we show the comparison of our corrected results against those of Ellis et al.: the experimental data on Figure \ref{fig:val_2a}, and the
+We proposed a correction, based on the results reported on Figure S4 of Ellis et al.\ for the $AR=4$ case, where the shift on the wave number due to coupling is 12.17 cm$^{-1}$ (difference between black and red curves for $AR=4$ on figure S4 of the supplementary materials). 
+We subtracted this value to that obtained with our simulations and we show the comparison of our corrected results against those of Ellis et al.: the experimental data on Figure \ref{fig:val_2a}, and the
 computational data on Figure \ref{fig:rep_2a}. 
-When comparing with their experiments, once applied the correction, we observe a good match of the wavenumber for the lower (and stronger) mode, as well as a good match for the 
-third and fourth peaks. The wave number of the second peak, related to a longitudinal excitation (mode $L_{000}$ on Ellis et al.), presents a discrepancy that we believe it is related to the fact that our 
+When comparing with their experiments, after the correction was applied, we observe a good match of the wavenumber for the lower (and stronger) mode, as well as a good match for the 
+third and fourth peaks. The wave number of the second peak, related to a longitudinal excitation (mode $L_{000}$ in Ellis et al.), presents a discrepancy that we believe is related to the fact that our 
 pillar does not have a substrate underneath. The remaining (fifth) peak, also presents a discrepancy, but in this case we can not identify the reason.
-We did not analyze the peaks out of the range of 864-961 cm$^{-1}$, since Ellis et al. \ describe these peaks to be associated with zone-folded LO (longitudinal) phonons of 4H-SiC,
-what goes beyond the study of interest.
-After considering all this implications, we can say that we have validated our solver \pygbe against the experimental results of Figure 2a, as well as replicated their computations. 
+We did not analyze the peaks out of the range 864--961 cm$^{-1}$, since Ellis et al. \ describe these peaks to be associated with zone-folded LO (longitudinal) phonons of 4H-SiC,
+and outside the scope of their study.
+After considering all these details, we can say that we have validated our solver \pygbe against the experimental results of Figure 2a, as well as replicated their computational results.
 
-CHALLENGES 
+%CHALLENGES 
 
-Throughout all the attempts of replication and validation, we face multiple challenges that started with the complexity of the system of study. In both papers we have systems that we were not able to fully 
-model using \pygbe. For the case of Rockstuhl et al.\ even though they used boundary element methods it was a 2D model instead of 3D like the one implemented in \pygbe. The computational work presented in Ellis et al.\ used a volumetric 
-method, while \pygbe is a surface one. Both works computed (or measured) quantities that were not the extinction cross section (computed in \pygbe), but since there is a relationship between their variables (scattering cross section and reflection)  
-and ours (extinction cross section), via the wavelength (wavenumber) at which resonance happens, this was not a problem. However, to produce the end results to compare against these works, we went through an 
-exhaustive process of modeling, assumptions making and even corrections. We did not count with any information regarding the solvers, discretization, meshes, etc. In the case of Ellis et al. \ we benefited from multiple communications with the authors, 
-who made available the geometry and mesh of the pillar, as well as the dielectric data used as input for the simulations. Even though we appreciate this gesture, replication studies should not rely on communications with the authors. 
-In both cases the secondary data that presented in their results were not publicly available and we relied on a digitized version of them that we obtained. This work is tedious and introduce a lot of uncertainties that would be avoided by releasing 
-the secondary data too.
+Throughout all these activities aiming to replicate previous results and validate our computational model, we faced multiple challenges, starting with the complexity of the system under study. In both our source papers, we have systems that we were unable to fully 
+model using \pygbe. For the case of Rockstuhl et al., even though they used a boundary element method, it was a 2D model instead of 3D like the one implemented in \pygbe. The computational work presented in Ellis et al.\ used a volumetric 
+formulation (finite element method), whereas \pygbe implements a boundary integral one. Both works computed (or measured) quantities different from the extinction cross-section (computed in \pygbe), but given he relationship between their quantities (scattering cross-section and reflection)  
+and ours (extinction cross section), via the wavelength (wavenumber) at which resonance happens, this was not a problem. To produce the end results for comparing against these works, however, we went through an 
+exhaustive process of modeling, making assumptions, and even corrections. We were lacking any information regarding the solvers, discretization, meshes, etc., in the original papers. In the case of Ellis et al., we benefited from multiple communications with the authors, 
+who made available the geometry and mesh of the pillar, as well as the dielectric data used as input for the simulations. Even though we appreciate this helpful interaction, replication studies should ideally not depend on communications with the original authors. 
+In both cases, the secondary data presented in their results were not publicly available and we relied on a manually digitized version, obtained from the plots. This work is tedious and introduces uncertainties that would be avoided by releasing 
+the secondary data.
 
-Validation has been a hard thing to achieve for our solver since the field does not count with benchmarks that are meant to be used for validation. Multiple times
-we encounter experimental results that we aim to replicate, but due to the lack of report on the conditions of the experiment, its setup and the geometries involved, 
-we have not been able to validate until this moment. Even though we were not modeling the same experimental setup, the communications with the authors of Ellis et al. \ made 
-possible the validation.
+Validation has been a hard goal to achieve for our solver since the field does not have benchmarks that are meant to be used for validation. Multiple times,
+we encountered experimental results that we aspired to replicate, but due to the insufficient reporting of the experimental conditions, the setup and the geometries involved, 
+we have unable to validate until this moment. Even though we were not modeling the same experimental setup, the communications with the authors of Ellis et al., made 
+the validation possible.
 
-After all the challenges faced to achieve validation and replication of results, we can say that the process was not linear, 
-and the complexity involved increases if the work to be replicated or use for validation was not obtained through reproducible practices, and made open at the time 
-of publication. We believe that reproducible practices are needed so the work presented can be not only reproduced, but also 
-replicated and even used for validation studies if applicable.
+After all the challenges faced to achieve code validation and replication of results, we can say that the process was far from  linear, 
+and the complexity involved increases if the work to be replicated or used for validation was not conducted and published using reproducible practices, and made open at the time 
+of publication. We conclude that reproducible practices are needed not only for the work to be reproduced, but also 
+replicated and even used for validation studies, if applicable.
