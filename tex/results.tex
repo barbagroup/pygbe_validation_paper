@@ -1,7 +1,7 @@
 %!TEX root = ClementiBarba2020.tex
 All the results of these paper were obtained using \pygbe (\url{https://github.com/pygbe/pygbe})
 with the version at this point in the history of commits (\url{https://github.com/pygbe/pygbe/tree/e1f3650b0c99cab99dcfe5372200d3a1534eddfe}), which contains 
-the Dockerfile to create the image that was used for the containers where the simulations wherr run. 
+the Dockerfile to create the image that was used for the containers where the simulations where run. 
 
 All results were obtained on a lab workstation, built from parts.
 Hardware specifications are as follows: 
@@ -11,9 +11,16 @@ Hardware specifications are as follows:
   \item GPU: Nvidia Tesla K40c (with 12 GB memory)
 \end{itemize}
 
+\textbf{Solver parameters}: We used a GMRES tolerance of $1\times10^{-6}$ for all our simulations. Details on the treecode and integration parameters, 
+can be found with input files the archive repository.
 
+\textbf{Run times:} We reported detailed time files along with the data of our simulations, that can be found in the repro-packs. However, 
+here is a small report.
 
-
+For the result of the replication of Figure 4 of Rockstuhl et al.\ the total time for each curve was approximately 11.6 hours, which is the result of computing
+the extinction cross section for 175 wavelength cases, what gives us $\approx$4 minutes per run. In the case of the validation and replication of Figure 2a of Ellis et al. \  
+the total time for the curve was approximately 2.3 hours, which is the result of computing
+the extinction cross section for 208 wavelength cases, what gives us $\approx$40 seconds per run.
 
 
 \subsection{Replication of results from Rockstuhl, et al., 2005}
