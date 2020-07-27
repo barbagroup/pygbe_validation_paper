@@ -13,3 +13,5 @@ tex/ClementiBarba2020.fdb_latexmk
 tex/ClementiBarba2020.fls
 
 .DS_Store
+.nbgrader.log
+.ipynb_checkpoints
