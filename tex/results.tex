@@ -70,7 +70,7 @@ Figure \ref{fig:cube535} shows the grid-independence study, using meshes with  1
     \includegraphics[width=0.75\textwidth]{cubeL535nm_15Kvs19K.pdf} 
     \caption{Grid-independence study for a SiC cube of side $L=535$ nm submerged in air under a constant 
     electric field in the $z$-direction. The curves represent the extinction cross-section divided by $L^2$ 
-    as a function of wavelength divided by $L$.}
+    as a function of wavelength divided by $L$, for two mesh sizes as shown in the legend.}
     \label{fig:cube535}
  \end{figure}
 
@@ -102,7 +102,7 @@ from now on we use $y=2688$ nm.
 \begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{rockstuhl_rectangles.pdf} 
-    \caption{Rockstuhl runs configurations}
+    \caption{Configurations for the simulations corresponding to Fig. 14 of Rockstuhl et al., 2005.}
     \label{fig:rectangle_sketch}
 \end{figure}
 
@@ -110,13 +110,13 @@ from now on we use $y=2688$ nm.
     \centering
     \subfloat{\includegraphics[width=0.48\textwidth]{ext_y_14a.pdf}}
     \subfloat{\includegraphics[width=0.48\textwidth]{ext_y_14b.pdf}} 
-    \caption{Effect of the elongation of the third direction ($y$) on the 
-        extinction cross section of a rectangular prism of SiC of dimensions $a=672$ nm 
+    \caption{Effect of the elongation of the third dimension ($y$) on the 
+        extinction cross-section of a rectangular prism of SiC of dimensions $a=672$ nm 
         and $b=328$ nm, submerged in air and under a constant electric field 
-        parallel to the z-axis. The left plot corresponds to a configuration such that the electric 
+        parallel to the $z$-axis. The left plot corresponds to a configuration such that the electric 
         field is parallel to $b$ (configuration (A) on Figure \ref{fig:rectangle_sketch}), while the 
         right plot corresponds to a configuration such that the electric field is 
-        parallel to $a$ (configuration (B) on Figure \ref{fig:rectangle_sketch}}
+        parallel to $a$ (configuration (B) on Figure \ref{fig:rectangle_sketch}.}
     \label{fig:ext_y_14}   
  \end{figure}
 
@@ -140,10 +140,10 @@ consistent with the results in Rockstuhl et al.
     \centering
     \subfloat{\includegraphics[width=0.48\textwidth]{tri_reg_round_14a.pdf}}
     \subfloat{\includegraphics[width=0.48\textwidth]{tri_reg_round_14b.pdf}}
-    \caption{ Effect of uniformity and roundness on the mesh on the 
-    extinction cross section of a rectangular prism of SiC of dimensions $a=672$ nm, 
+    \caption{Effect of uniformity of the mesh and roundness of the edges on the 
+    extinction cross-section of a rectangular prism of SiC of dimensions $a=672$ nm, 
     $b=328$ nm and $y=2688$ nm, submerged in air and under a constant electric field 
-    parallel to the z-axis}
+    parallel to the $z$-axis.}
     \label{fig:tri_reg_round_14}
  \end{figure}
 
@@ -159,9 +159,9 @@ that this is a consequence of the 3D effects in our geometry.
     \centering
     \subfloat{\includegraphics[width=0.48\textwidth]{replication_14a.pdf}}
     \subfloat{\includegraphics[width=0.48\textwidth]{replication_14b.pdf}} 
-    \caption{Replication of Figure 14 from Rockstuhl et al.\ 2005. Extinction cross section of a
+    \caption{Replication of the results in Figure 14 of Rockstuhl et al., 2005. Extinction cross-section of a
     rectangular prism of SiC of dimensions $a=672$ nm, $b=328$ nm and $y=2688$ nm, submerged
-    in air and under a constant electric field parallel to the z-axis.}
+    in air and under a constant electric field parallel to the $z$-axis.}
     \label{fig:rep_14}
  \end{figure}
 
@@ -227,10 +227,10 @@ To be able to replicate the result of Figure S4 of the supplementary materials o
 need to identify the lower-frequency mode for each of
 the aspect ratios in our computations. For each aspect ratio ($AR$) 
 value from 1 to 7, we computed the extinction cross section $C_{ext}$ across the wave numbers in the range
-800--1000 $cm^{-1}$. We identified the lower-frequency mode ($E^{\parallel}_{100}$ for Ellis et al.) that is not a 
+800--1000 cm$^{-1}$. We identified the lower-frequency mode ($E^{\parallel}_{100}$ for Ellis et al.) that is not a 
 longitudinal mode. The longitudinal modes appear only when we have an incidence angle that is off-normal, since 
 they are associated with the height of the pillar. Figure \ref{fig:AR_22_vs_norm} shows the results of the extinction 
-cross-section of a SiC pillar of fixed height ($H=950$ nm), fixed width ($W=400$) and varied length ($L=400$--$2800$ nm), for normal 
+cross-section of a SiC pillar of fixed height ($H=950$ nm), fixed width ($W=400$ nm) and varied length ($L=400$--$2800$ nm), for normal 
 and 22-degrees angle of incidence. The simulations where performed 
 for the long-edge orientation, meaning that the electric field is aligned with the length of the pillar 
 when having normal incidence as shown on Figure \ref{fig:ellis_ang_inc}. From these results, we selected 
@@ -243,7 +243,7 @@ rotated the geometry instead.)
 \begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{ellis_ang_inc.pdf} 
-    \caption{Diagram of angles of incidence in \pygbe setup to comply with Ellis et al. disposition.}
+    \caption{Diagram showing the angles of incidence in our simulation setups to comply with the configuration in the case from Ellis et al.}
     \label{fig:ellis_ang_inc}
  \end{figure}
 
@@ -251,9 +251,9 @@ rotated the geometry instead.)
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{AR_22_vs_norm.pdf} 
-    \caption{Extinction cross section across wave number for SiC pillars of multiple aspect ratios,  
-             (H=950 nm, W=400nm, L=400-2800 nm (AR=1-7)), where we have normal incidence and a 
-             22 degrees incidence.
+    \caption{Extinction cross-section across wavenumbers for SiC pillars of varying aspect ratios,  
+             ($H=950$ nm, $W=400$ nm, $L=400$--$2800$ nm, $AR=1$--$7$), with both normal incidence and a 
+             22-degree incidence.
             }
     \label{fig:AR_22_vs_norm}
  \end{figure}
@@ -262,7 +262,7 @@ rotated the geometry instead.)
 \begin{table}
     \begin{center}
       \caption{Wavelength at which peaks happen for different aspect ratios, for runs where the electric
-      field is parallel to the length (L) of the pillar. We have normal incidence and 22 degrees.}
+      field is parallel to the length ($L$) of the pillar. We have normal incidence and 22-degree incidence.}
       \label{tab:ar_peaks}
       \begin{tabular}{c c c c c c c c}
         \textbf{AR} \\
@@ -297,8 +297,8 @@ rotated the geometry instead.)
 \begin{figure}
     \centering
     \includegraphics[width=0.85\textwidth]{AR_rep_FS4_Ellis2016.pdf} 
-    \caption{Replication of figure S4 of supplementary material of Ellis 2016. Wave
-    number at which happens the $E^{\parallel}_{100}$ mode for different aspect ratios.}
+    \caption{Replication of figure S4 in the supplementary materials of Ellis et al., 2016. Wave
+    number at which the $E^{\parallel}_{100}$ mode happens for different aspect ratios.}
     \label{fig:rep_FS4_ellis}
  \end{figure}
  
@@ -345,24 +345,24 @@ there are coupling effects that in our simulations are not considered.
 \begin{figure}
     \centering
     \includegraphics[width=0.85\textwidth]{pygbe_vs_exp_fig2a_Ellis.pdf} 
-    \caption{\pygbe vs experiments of figure 2a of Ellis 2016. Ellis data 
-    was digitized with web digitizer.}
+    \caption{\pygbe vs.\ the experiments presented in Figure 2a of Ellis et al., 2016 (we obtained the data 
+    digitizing by hand from their figure using WebPlotDigitizer).}
     \label{fig:pygbe_vs_exp_2a}
  \end{figure}
 
 \paragraph{First-order correction.}
 
-Since our simulations do not take into account coupling effects, we cannot strictly match 
+Since our simulations do not take into account coupling effects in an array of prisms, we cannot strictly match 
 the conditions to validate our solver. However, from Figure S4 in the supplementary 
 materials of Ellis et al., we know that coupling effects affect the $E^{\parallel}_{100}$ 
 mode by a shift of 12.17 cm$^{-1}$. Therefore, as a \textit{first-order correction} we can 
-subtract this value from our simulations to account for coupling effects. In Figure 
+subtract this amount from our simulations to account for coupling effects. In Figure 
 \ref{fig:val_2a}, we present the result after applying this correction for coupling effects.
 It is worth mentioning that the far-left (837 cm$^{-1}$) and far-right (964 cm$^{-1}$) peaks 
 on the results of Ellis et al., are peaks associated with zone-folded LO (longitudinal) phonons of 4H-SiC,
-what goes beyond theirs \cite{ellis2016} and our paper. They concentrate their analysis on the peaks that happen between 864 and 961 cm$^{-1}$.
+an effect they say is beyond the scope of their analysis \cite{ellis2016}. They concentrate their analysis on the peaks that occur between 864 and 961 cm$^{-1}$.
 If we use the same approximation and compare the results with the simulations of Ellis et al.\ on
-Figure 2 of their paper (green curve), we get Figure \ref{fig:rep_2a}.
+Figure 2 of their paper (green curve), we obtain Figure \ref{fig:rep_2a}.
 
 \begin{figure}
     \centering
