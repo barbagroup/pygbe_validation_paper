@@ -1,29 +1,29 @@
 %!TEX root = ClementiBarba2020.tex
-All the results of these paper were obtained using \pygbe (\url{https://github.com/pygbe/pygbe})
-with the version at this point in the history of commits (\url{https://github.com/pygbe/pygbe/tree/e1f3650b0c99cab99dcfe5372200d3a1534eddfe}), which contains 
-the Dockerfile to create the image that was used for the containers where the simulations where run. 
-
-All results were obtained on a lab workstation, built from parts.
+All the results reported in this paper were obtained using the \pygbe software \cite{ClementiETal2017},
+with the version at commit \href{https://github.com/pygbe/pygbe/tree/e1f3650b0c99cab99dcfe5372200d3a1534eddfe}{34eddfe} in the history.
+The software GitHub repository contains a Dockerfile to create the container image where we ran the simulations. 
+The manuscript GitHub repository is separate from the software repository, and can be found at \url{https://github.com/barbagroup/pygbe_validation_paper}.
+It contains the reproducibility packages for all results, as described in sub-section \ref{sec:reprod} and elsewhere in the paper.
+We used a lab workstation for all simulations, built from parts.
 Hardware specifications are as follows: 
-\begin{itemize}
-  \item CPU: Intel Core i7-5930K Haswell-E 6-Core 3.5GHz LGA 2011-v3
-  \item RAM: G.SKILL Ripjaws 4 series 32GB (4 x 8GB)
-  \item GPU: Nvidia Tesla K40c (with 12 GB memory)
-\end{itemize}
+\begin{compactitem}
+  \item[$\triangleright$] CPU: Intel Core i7-5930K Haswell-E 6-Core 3.5GHz LGA 2011-v3
+  \item[$\triangleright$] RAM: G.SKILL Ripjaws 4 series 32GB (4 x 8GB)
+  \item[$\triangleright$] GPU: Nvidia Tesla K40c (with 12 GB memory)
+\end{compactitem}
 
-\textbf{Solver parameters}: We used a GMRES tolerance of $1\times10^{-6}$ for all our simulations. Details on the treecode and integration parameters, 
-can be found with input files the archive repository.
-
-\textbf{Run times:} We reported detailed time files along with the data of our simulations, that can be found in the repro-packs. However, 
-here is a small report.
-
-For the result of the replication of Figure 4 of Rockstuhl et al.\ the total time for each curve was approximately 11.6 hours, which is the result of computing
-the extinction cross section for 175 wavelength cases, what gives us $\approx$4 minutes per run. In the case of the validation and replication of Figure 2a of Ellis et al. \  
-the total time for the curve was approximately 2.3 hours, which is the result of computing
-the extinction cross section for 208 wavelength cases, what gives us $\approx$40 seconds per run.
+\paragraph{Solver parameters:} We used a GMRES exit tolerance of $1\times10^{-6}$ in the iterative solver for all our simulations. Details on the treecode and integration parameters (and others)
+can be found within input files included in the manuscript GitHub repository as part of the reproducibility packages (``repro-packs'').
 
 
-\subsection{Replication of results from Rockstuhl, et al., 2005}
+\paragraph{Run times:} We report detailed time logs together with the data of our simulations, as part of the repro-packs to accompany this paper. Here is a brief report.
+For the result of the replication of Figure 14 of Rockstuhl et al., sub-section \ref{sec:replication1}, the total wall-clock time for producing each curve was approximately 11.6 hours, which is the result of computing
+the extinction cross section for 175 wavelength cases, giving $\approx$4 minutes per run. In the case of the validation and replication of Figure 2a of Ellis et al., sub-section \ref{sec:replication2}, 
+the total wall-clock time for producing the curve was approximately 2.3 hours, which is the result of computing
+the extinction cross section for 208 wavelength cases, giving $\approx$40 seconds per run.
+
+
+\subsection{Replication of results from Rockstuhl, et al., 2005}\label{sec:replication1}
 
 %%% Rockstuhl work summary%%%%
 The work of Rockstuhl et al.\cite{rockstuhl2005} studies the phonon-polariton response of silicon carbide (SiC)
@@ -166,7 +166,7 @@ that this is a consequence of the 3D effects in our geometry.
  \end{figure}
 
 
- \subsection{Replication of results from Ellis et al., 2016, and validation}
+ \subsection{Replication of results from Ellis et al., 2016, and validation}\label{sec:replication2}
 
  %%% Ellis work summary %%%%
 The work of Ellis and coworkers \cite{ellis2016} studies the aspect-ratio evolution of high-order
