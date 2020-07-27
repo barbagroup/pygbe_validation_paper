@@ -1,4 +1,4 @@
-\documentclass[openacc]{rstransa} %%%%where rstrans is the template name
+\documentclass{rstransa} %%%%where rstrans is the template name
 
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -54,12 +54,29 @@ The George Washington University, Washington D.C., USA }
 \begin{fmtext}  
 \section{Introduction}
 
-PUT SOMETHING HERE. I DON'T GET WHAT WE ARE SUPPOSE TO PUT HERE, BUT THE GUIDELINES HAVE THIS
+Some fields of research, particularly solid mechanics and computational fluid dynamics, have a long tradition of community consensus building and established practices for verification and validation of computational models. 
+Such practices are uncommon in other fields of science, especially if they have more recently become computationally intensive.
+Verification and validation also become increasingly difficult when the computational models arise from many levels of mathematical and physical modeling, representing a complex system. 
+In recent years, science as a whole has come to be concerned with reproducibility and replication as a new front in the continual campaign to build confidence on published findings. 
+Together with formal processes of uncertainty quantification, we have now three complementary ``axes'' to building trust in science. 
+
+
 
 \end{fmtext}
 
 \maketitle
 % Body of paper.
+
+% continue Introduction
+
+The lengths to which research communities should go to conduct activities in verification and validation, reproducibility and replication, and uncertainty quantification, are highly debated. 
+Some journals require articles reporting on computational results to include proof of these activities, while most do not consider these aspects at all in their review criteria. 
+In this paper, we tackle a sub-field of computational physics where tradition for these confidence-building activities is scant. 
+The physical setting, excitation of resonance modes in nanostructures under an electromagnetic field, relies on multiple levels of modeling, while the experimental methods are complicated by the small length scales. 
+We previously developed a computational model and software (called \pygbe) that has undergone code and solution verification, but a validation opportunity had remained elusive. 
+Here, we present replication studies and a validation case based on published simulation and experimental results. 
+Moreover, the studies in this paper were conducted under rigorous reproducibility practices, and all digital artifacts needed to reproduce every figure are shared in reproducibility packages available in a GitHub repository and archival services. 
+
 \section{Background and methods}\label{sec:background}
 \input{background}
 
