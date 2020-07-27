@@ -37,23 +37,25 @@ We did not analyze the peaks out of the range of 864-961 cm$^{-1}$, since Ellis 
 what goes beyond the study of interest.
 After considering all this implications, we can say that we have validated our solver \pygbe against the experimental results of Figure 2a, as well as replicated their computations. 
 
+CHALLENGES 
 
-Challenges: all what's on the replication list that should go in the background 
+Throughout all the attempts of replication and validation, we face multiple challenges that started with the complexity of the system of study. In both papers we have systems that we were not able to fully 
+model using \pygbe. For the case of Rockstuhl et al.\ the numerical method was the same, but the it was a 2D model instead of 3D like the one of \pygbe, while the computational work presented in Ellis et al.\ used a volumetric 
+method, instead of a surface one like in \pygbe. Both works computed (or measured) quantities that were not the extinction cross section, but since there is a relation between their variables (scattering cross section or reflection)  
+and ours (extinction cross section), through the wavelength (or wavenumber) at which the peaks happen, we have the quantity of interest in common. However, to produce the end results to compare against these works, we went through an 
+exhaustive process of modeling, since we did not count with any information regarding the solvers, discretization, mesh, etc. In the case of Ellis et al. \ we benefited from multiple communications with some of the authors, 
+who made available the geometry and mesh of the pillar, as well as the dielectric data needed as input for the simulations. Even though we appreciate this gesture, replication studies should not rely on communications with the authors. 
+In both cases the secondary data that they use to achieve the results were not publicly available and we relied on a digitized version of them that we obtained. This work is tedious and introduce a lot of uncertainties that would be avoided by releasing 
+the secondary data too. 
 
-Regarding Ellis:
+Validation has been a hard thing to achieve for our solver since the field does not count with benchmarks that are meant to be used for validation. Multiple times
+we encounter experimental results that we aim to replicate, but due to the lack of report on the conditions of the experiment, its setup and the geometries involved, 
+we have not been able to validate until this moment. Even though we were not modeling the same experimental setup, the communications with the authors made possible to 
+attempt the validation.
 
-Replication of Fig S4 supplementary material, was achieved successfully. 
-Figure 2a validation and replication, achieved after correction for coupling. 
-Challenges to validate with more results on the paper, since we did not count with enough 
-information for the non-coupling case. So far we haven't attempted to run multiple pillars 
-(ACTUALLY WE DID BUT I HAD THE WRONG NORMALS ON THE MESHES SO THE RESULTS WHERE TRASH), it is possible although we can not
-introduce a substrate and have periodic boundary conditions.  
+(try to connect all this challenges with what we wrote in the background about replication, we touch on all those bullet points)
 
-
-In general:
-- How hard is to replicate when you do not count with enough information regarding software, methods, mesh discretization, etc. 
-- Challenges to access data, therefore relying on digitalization of plot that introduce a lot of human error, specially if the quality 
-of the plot is bad like in Rockstuhl et al. 
-- Validation can be complicated when there are no standards/benchmarks on the field.
-- We can say our validation and replication studies, our reproducible. So hopefully this can be use as
- an example on the field. 
+After all the challenges faced to achieve validation and replication of results, we can say that the process was not linear, 
+and the complexity involved increases if the work to be replicated or use for validation was not obtained through reproducible practices, and made open at the time 
+of publication. We believe that reproducible practices are needed so the work presented can be not only reproduced, but also 
+replicated and even used for validation studies if applicable.
