@@ -1,6 +1,6 @@
 # Reproducibility packages
 
-This directory contains the necessary information to reproduce the figures of the paper: Reproducible Validation and Replication Studies in Nanoscale Physics
+This directory contains the necessary information to reproduce the figures of the paper: Reproducible Validation and Replication Studies in Nanoscale Physics, in particular the results related to Rockstuhl et al. 2005.
 
 To be able to reproduce these results, the user needs Python and Jupyter notebooks. 
 
