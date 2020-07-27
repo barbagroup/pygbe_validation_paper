@@ -48,12 +48,24 @@ The George Washington University, Washington D.C., USA }
     Credibility building activities in computational research include
     verification and validation, reproducibility and replication, and
     uncertainty quantification. Though orthogonal to each other, they are
-    all related. This paper presents validation and replication studies in 
+    related. This paper presents validation and replication studies in 
     electromagnetic excitation of nanoscale structures, where the quantity
     of interest is the wavelength at which resonance peaks occur. 
     The study uses the open-source software PyGBe: a boundary element
     solver with trecode acceleration and GPU capability.
-    
+    We replicate a result by Rockstuhl et al. (2005, doi:10/dsxw9d) with a
+    two-dimensional boundary element method on silicon carbide particles,
+    despite differences in our method. 
+    The second replication case from Ellis et al. (2016, doi:10/f83zcb) looks
+    at aspect ratio effects on high-order modes of localized surface phonon-polariton
+    nanostructures. The main result replicates: the wavenumber
+    position of the first mode, but for other modes the results differ.
+    With virtually no information about the original simulations, 
+    explaining the discrepancies is not possible. 
+    A comparison with experiments that measured polarized reflectance 
+    of silicon carbide nano pillars provides a validation case.
+    The wavenumber of the dominant mode and two more do match, but 
+    differences remain in other minor modes. 
 
     \end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -61,13 +73,6 @@ The George Washington University, Washington D.C., USA }
 %%%%%%%%%% Insert the texts which can accommodate on firstpage in the tag "fmtext" %%%%%
     
 \begin{fmtext}  
-\section{Introduction}
-
-Some fields of research, particularly solid mechanics and computational fluid dynamics, have a long tradition of community consensus building and established practices for verification and validation of computational models. 
-Such practices are uncommon in other fields of science, especially if they have more recently become computationally intensive.
-Verification and validation also become increasingly difficult when the computational models arise from many levels of mathematical and physical modeling, representing a complex system. 
-In recent years, science as a whole has come to be concerned with reproducibility and replication as a new front in the continual campaign to build confidence on published findings. 
-Together with formal processes of uncertainty quantification, we have now three complementary ``axes'' to building trust in science. 
 
 
 
@@ -76,7 +81,13 @@ Together with formal processes of uncertainty quantification, we have now three 
 \maketitle
 % Body of paper.
 
-% continue Introduction
+\section{Introduction}
+
+Some fields of research, particularly solid mechanics and computational fluid dynamics, have a long tradition of community consensus building and established practices for verification and validation of computational models. 
+Such practices are uncommon in other fields of science, especially if they have more recently become computationally intensive.
+Verification and validation also become increasingly difficult when the computational models arise from many levels of mathematical and physical modeling, representing a complex system. 
+In recent years, science as a whole has come to be concerned with reproducibility and replication as a new front in the continual campaign to build confidence on published findings. 
+Together with formal processes of uncertainty quantification, we have now three complementary ``axes'' to building trust in science. 
 
 The lengths to which research communities should go to conduct activities in verification and validation, reproducibility and replication, and uncertainty quantification, are highly debated. 
 Some journals require articles reporting on computational results to include proof of these activities, while most do not consider these aspects at all in their review criteria. 
