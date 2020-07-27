@@ -383,7 +383,9 @@ Figure 2 of their paper (green curve), we obtain Figure \ref{fig:rep_2a}.
  
  Barba (2019) describes the elements of reproducible computational research that we have adopted in our practice \cite{barba2019praxis}. 
  A key element is professional software management and engineering, and the central technology solution is version control. 
- Preserving a complete history of changes is the only way to manage complex software projects that can support reproducibility.
+ Preserving a complete history of changes is the only way to manage complex software projects that can support reproducibility. 
+ Moreover, all our research software is developed in the open, and shared under permissive public licenses, such as BSD-3 or MIT License. 
+ These open licenses permit all uses, as well as derivative works, only subject to attribution.
  Another key element of transparent and reproducible computational modeling is \emph{automation}.
 Automating every step means \emph{turning protocols into code.}
 For example, simulations are launched with parameters fed from a configuration file rather than an interactive prompt, and all figures and plots are produced by writing scripts, rather than pointing-and-clicking on a graphical interface. 
@@ -391,8 +393,14 @@ The goal is to create complete ``recipes'' in code, which can be run, versioned,
 
 Our signature reproducibility practice is to organize and share in an archival-quality repository (providing a global identifier) all digital artifacts associated with the results in the paper. 
 This includes input files, configuration files, post-processing scripts, files specifying the build process and containerization (e.g., Docker files), and even cloud computing machine definitions, if applicable \cite{mesnard-barba2019}.
-We call these openly shared file sets \emph{reproducibility packages}, or repro-packs for short.
-As in our previous papers, it is possible to reproduce all the figures in this paper using the repro-packs shared in the manuscript GitHub repository, and archived separately in Figshare and Zenodo.
-[LIST, EXPLAIN, CITE ARCHIVES] 
-\pygbe is openly developed and shared under the BSD3-clause license via its repository at \url{https://github.com/barbagroup/pygbe}.
+We call these openly shared file sets \emph{reproducibility packages}, or repro-packs for short, and we have been doing this for many years and improving the process iteratively. 
+The basic steps were already contained in the ``Reproducibility PI Manifesto'' of 2012 \cite{barba2012manifesto}, where Barba pledged to always share a manuscript's data, plotting scripts and figures under CC-BY (Creative Commons Attribution license).
+Notably, this makes the figures re-usable by readers, without requiring them to ask permissions from the publisher, even if there was a transfer of copyright of the paper (the figures are included in the paper under the conditions of the public license). 
+We later extended the practice to include all other digital artifacts associated with the results, beyond secondary data and figures. 
+As in our previous papers, readers can reproduce all the figures in this paper using the repro-packs shared in the manuscript GitHub repository, and archived separately in Figshare and Zenodo. 
+They include Jupyter notebooks with all the plotting code, and also the manually digitized data from the figures in the source articles for our replication cases.
+Barba and Thiruvathukal, 2017 \cite{BarbaThiruvathukal2017}, explain that it is \emph{not enough} to provide these materials in a GitHub repository (the owner of a repository is always able to delete it), and one should deposit the reproducibility packages in an archival service providing a global identifier and permanent link (like a digital object identifier, DOI).
+%[LIST, EXPLAIN, CITE ARCHIVES] 
+The repository for this paper is at \url{https://github.com/barbagroup/pygbe_validation_paper}, which also includes the manuscript source files in LaTeX.
+The software repository for \pygbe is at \url{https://github.com/barbagroup/pygbe}.
 
