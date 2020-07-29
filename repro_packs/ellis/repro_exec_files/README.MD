@@ -7,7 +7,7 @@ This directory contains four folders with executions files to reproduce the data
 1. Install PyGBe. 
 Installation can be done from source or with a Docker file. The Docker file and installation instructions are available in the GitHub software repository https://github.com/pygbe/pygbe
 
-1. Download input data files from the Zenodo deposit () and extract in the desired location. (If using a Docker container, the data should be available inside the container.)
+1. Download input data files from the Zenodo deposit (DOI: 10.5281/zenodo.3962584) and extract in the desired location. (If using a Docker container, the data should be available inside the container.)
 
 **Important note**:
 1. When passing the path of the input problem folder to run the scripts, the path must end in `/`:
