@@ -14,7 +14,7 @@ We were successful at replicating the strong peaks reported  by Rockstuhl et al.
 when $E$ is parallel to the long side. Our results contain extra (small) peaks that are not present in the work of Rockstul et al.
 The first one, located between the main two peaks, we attribute to the the effect of
 sharp edges (see Figure \ref{fig:tri_reg_round_14}), as when we introduce a level of roundness, it diminishes. The second extra peak is the far right one, and we believe this
-peak is a consequence of the 3D nature of our geometry; as observed in Figure \ref{fig:ext_y_14} this peak intensity
+peak is a consequence of the 3D nature of our geometry; as observed in Figure \ref{fig:ext_y_14}, this peak intensity
 decreases as the third dimension of the geometry lengthens.
 The quantity of interest in these findings is the wavelength of the resonance peaks, and our results do indeed match the findings.
 
@@ -42,7 +42,7 @@ After considering all these details, we can say that we have validated our solve
 Throughout all these activities aiming to replicate previous results and validate our computational model, we faced multiple challenges, starting with the complexity of the system under study. In both our source papers, we have systems that we were unable to fully 
 model using \pygbe. For the case of Rockstuhl et al., even though they used a boundary element method, it was a 2D model instead of 3D like the one implemented in \pygbe. The computational work presented in Ellis et al.\ used a volumetric 
 formulation (finite element method), whereas \pygbe implements a boundary integral one. Both works computed (or measured) quantities different from the extinction cross-section (computed in \pygbe), but given the relationship between their quantities (scattering cross-section and reflection)  
-and ours (extinction cross section), via the wavelength (wavenumber) at which resonance happens, this was not a problem. To produce the end results for comparing against these works, however, we went through an 
+and ours (extinction cross-section), via the wavelength (wavenumber) at which resonance happens, this was not a problem. To produce the end results for comparing against these works, however, we went through an 
 exhaustive process of modeling, making assumptions, and even corrections. We were lacking any information regarding the solvers, discretization, meshes, etc., in the original papers. In the case of Ellis et al., we benefited from multiple communications with the authors, 
 who made available the geometry and mesh of the pillar, as well as the dielectric data used as input for the simulations. Even though we appreciate this helpful interaction, replication studies should ideally not depend on communications with the original authors. 
 In both cases, the secondary data presented in their results were not publicly available and we relied on a manually digitized version, obtained from the plots. This work is tedious and introduces uncertainties that would be avoided by releasing 
