@@ -42,8 +42,8 @@ dimension of the geometry), we chose the case with $a=672$ nm, $b=328$ nm.
 full Maxwell equations, while we solve a 3D problem with the electrostatic approximation. 
 We lack any information about their code implementations, discretization schemes, or solver.  
 We computed extinction cross-section (scattering plus absorption) while Rockstuhl et al.\ present only scattering cross-section. 
-Absorption dominates in intensity over scattering in the quasistatic regime, so these results are not directly comparable. 
-When the resonance peaks are sharp and narrow, the wavelengths at which they occur in the scattering and absorption spectra are nearly the same.
+Absorption dominates in intensity over scattering in the quasistatic regime, so these results are not generally comparable. 
+When the resonance peaks are sharp and narrow, however, the wavelengths at which they occur in the scattering and absorption spectra are nearly the same.
 For example, Wiley et al.\ show simulation results for a silver nanocube where the main peaks in the spectra are close \cite{wiley-etal-2006}.  
 Since silicon carbide has more pronounced peaks than silver, the wavelength at which they occur in the extinction and scattering spectra are more closely aligned.
 
@@ -65,7 +65,7 @@ Due to the nature of the geometry and its sharp edges, it was challenging to see
 We have completed grid-convergence analysis for this type of physics in a previous work, but using spherical geometries \cite{ClementiETal2019}. 
 With that experience, and given the difficulty caused by sharp edges, we are content with studying grid-independence here instead.
 Figure \ref{fig:cube535} shows the grid-independence study, using meshes with  15,552 triangles (density $9.05\times10^{-4}$ per $\text{\AA}$ squared)
- to 19,200 triangles (density $1.11\times10^{-5}$ $\text{\AA}$ squared):
+ to 19,200 triangles (density $1.11\times10^{-5}$ per $\text{\AA}$ squared):
  the computed results show no discernible difference.
 
 \begin{figure}
@@ -139,7 +139,7 @@ For reproducibility purposes, we provide all the mesh files, as described in sub
 Figure \ref{fig:tri_reg_round_14} shows the 
 results of the effect of uniformity and roundness. One can see that the second peak located at $\approx$ 10.6 $\mu$m  is much diminished in the green curve for both the $E\parallel b$  the $E\parallel a$ plots. 
 These effects can be attributed 
-to the effect of the roundness. This is consistent with the results in Rockstuhl et al. 
+to the roundness, consistent with the results in Rockstuhl et al. 
 
 \begin{figure}
     \centering
@@ -191,14 +191,14 @@ oriented parallel or perpendicular to the long axis of the pillars.
 Our first aim was to replicate the computational result presented in Figure S4 of their supplementary 
 material, corresponding to the black curve on their plot. In this 
 figure, they show simulation results for the resonance spectral position of the lower-frequency 
-mode when having parallel polarization ($E^{\parallel}_{100}$), with an incidence angle of 22$^\circ$.
+mode when having parallel polarization ($E^{\parallel}_{100}$), with an incidence angle of 22 degrees.
 We attempted to replicate this result since the gap between the pillars 
 is 5000 nm (10 times larger than in the other cases), diminishing the effects of coupling, which makes it 
 a better candidate to replicate using \pygbe. 
 In our calculations, the setup consists of a single pillar, with no substrate.
 Our second attempted replication is  
 for the results presented in Figure 2a, corresponding to reflectance measurements across wave number
-for pillars with aspect ratio $AR=4$, angle of incidence of 22 degrees, and incoming polarization parallel to the 
+for pillars with aspect ratio $AR=4$, angle of incidence 22 degrees, and incoming polarization parallel to the 
 length of the pillars. For this case, the authors also reported experimental results that we will use for validation of our solver. 
 
 \subsubsection{Differences in method, mesh and dielectric data}
@@ -211,18 +211,18 @@ they used one pillar over a portion of substrate, with periodic boundary conditi
 pillars and their interactions. 
 We use the boundary element method in the quasistatic approximation, which is suitable in this case 
 since the pillar's size is small compared to the wavelengths involved in the simulations: 
-which are in the range 10000--12500 nm. 
-We measure extinction cross section, which will express as peaks instead of dips (shown in the reflection plots of Ellis et al.). 
+in the range 10000--12500 nm. 
+We measured extinction cross section, which will express as peaks instead of dips (shown in the reflection plots of Ellis et al.). 
 The intensity of the peaks is not comparable, but we are looking to match the wave number (quantity of interest) at which these events happen. 
 
 \paragraph{Mesh:}
 For the case with aspect ratio $AR=4$, we have a non-uniform triangular surface mesh ($N=4398$) provided to us by the authors of 
 Ellis et al., which we used for validation and replication of Figure 2a of their paper. However, for the replication
 of Figure S4 of the supplementary material, we needed the remaining aspect ratio meshes. We generated uniform meshes using our
-Python script, and we determined the density of these meshes by comparing the extinction cross section for the case with $AR=4$ of 
-our mesh and the one provided by Ellis et al. We noticed that using around double the elements ($N=8564$) than in the original mesh and 
-rounding the edges, the relative errors for the extinction cross section were, on average, smaller than 3$\%$, and the variation on the wavelength peak
-position was smaller than 1 cm$^{-1}$. This analysis led us to a mesh density of $\approx \; 1.7 \times10^{-5}$ triangles per $\text{\AA}$ squared to create the meshes for 
+Python script, and we determined the density of these meshes by comparing the extinction cross-section for the case with $AR=4$ of 
+our mesh and the one provided by Ellis et al. We noticed that using around double the number of elements ($N=8564$) than in the original mesh and 
+rounding the edges, the relative errors for the extinction cross-section were, on average, smaller than 3$\%$, and the variation on the wavelength peak
+position was smaller than 1 cm$^{-1}$. This analysis led us to a density of $\approx \; 1.7 \times10^{-5}$ triangles per $\text{\AA}$ squared to create the meshes for 
 the aspect ratio variation study.
 
 
@@ -235,7 +235,7 @@ and corresponds to experimental values of the dielectric.
 To be able to replicate the result of Figure S4 of the supplementary materials of Ellis et al., we
 need to identify the lower-frequency mode for each of
 the aspect ratios in our computations. For each aspect ratio ($AR$) 
-value from 1 to 7, we computed the extinction cross section $C_{ext}$ across the wave numbers in the range
+value from 1 to 7, we computed the extinction cross-section $C_{ext}$ across the wave numbers in the range
 800--1000 cm$^{-1}$. We identified the lower-frequency mode ($E^{\parallel}_{100}$ for Ellis et al.) that is not a 
 longitudinal mode. The longitudinal modes appear only when we have an incidence angle that is off-normal, since 
 they are associated with the height of the pillar. Figure \ref{fig:AR_22_vs_norm} shows the results of the extinction 
@@ -243,8 +243,8 @@ cross-section of a SiC pillar of fixed height ($H=950$ nm), fixed width ($W=400$
 and 22-degrees angle of incidence. The simulations where performed 
 for the long-edge orientation, meaning that the electric field is aligned with the length of the pillar 
 when having normal incidence as shown on Figure \ref{fig:ellis_ang_inc}. From these results, we selected 
-the lowest mode that it is not a longitudinal one and extracted its wavelength (see \ref{tab:ar_peaks}) to replicate 
-\ref{fig:rep_FS4_ellis}. Figure \ref{fig:rep_FS4_ellis} shows the results from  Ellis et al. (digitized by hand using the WebPlotDigitizer) and the results obtained
+the lowest mode that is not a longitudinal one and extracted its wavelength (see Table \ref{tab:ar_peaks}) to replicate 
+Figure \ref{fig:rep_FS4_ellis}. This figure shows the results from  Ellis et al. (digitized by hand using the WebPlotDigitizer) and the results obtained
 with \pygbe, and Table \ref{tab:err_AR} shows that the percentage error is below 2$\%$ for all cases.
 (Note that Ellis et al.\ changed the angle of incidence of the illuminating vector while in \pygbe we 
 rotated the geometry instead.) 
@@ -337,8 +337,8 @@ we have the original mesh, provided to us by the authors. We also know that our 
 for the mode $E^{\parallel}_{100}$ compares well with theirs (percentage error 0.16$\%$), therefore we
 attempted to validate our simulations with their experimental results (red curve on their paper), as well 
 as to replicate their simulations (green curve on their paper).
-Figure 2a of Ellis et al., presents measured and simulated reflectances of SiC pillar
-arrays with a 500 nm gap. All their measurements and simulations were performed with 
+Figure 2a of Ellis et al.\ presents measured and simulated reflectances of SiC pillar
+arrays with a 500-nm gap. All their measurements and simulations were performed with 
 22$^\circ$ off-normal angle of incidence and incoming polarization parallel to the 
 elongated size of the pillar. 
 
@@ -348,7 +348,7 @@ and rotated the orientation of the pillar to match the angle of incidence used b
 In Figure \ref{fig:pygbe_vs_exp_2a}, we present a 
 comparison of our simulations and the experimental results of Ellis et al. A 
 difference in the wavelengths of the peaks is noticeable. This may be attributed to the
-fact that in their experiments the separation between pillars is of 500 nm, which implies
+fact that in their experiments the separation between pillars is 500 nm, which implies
 there are coupling effects that in our simulations are not considered.  
 
 \begin{figure}
