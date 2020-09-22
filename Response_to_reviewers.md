@@ -71,3 +71,5 @@ See history of commits, including:
 
 - Commit [94279c6](https://github.com/barbagroup/pygbe_validation_paper/commit/94279c66d6654eebe2da4163689ac5d88ecd130a)
 - Commit: [89b23f9](https://github.com/barbagroup/pygbe_validation_paper/commit/89b23f94f972d2c2bff5c1a899c407386de1ae48)
+
+We added a note in the acknowledgements for this correspondence with Rockstuhl.
