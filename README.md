@@ -4,6 +4,9 @@
 
 Manuscript repository, including all source files for the text and reproducibility packages for all figures.
 
+> This article will appear in _Philosophical Transactions of the Royal Society A_, March 2021.
+> Preprint: [arXiv:2008.05414](https://arxiv.org/abs/2008.05414)
+
 
 ### LICENSE
 **Not all content in this repository is open source.** The Python code for creating the figures is shared under a BSD3 License. The written content in any Jupyter Notebooks is shared under a Creative Commons Attribution (CC-BY) license. 
